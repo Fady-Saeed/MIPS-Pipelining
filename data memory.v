@@ -1,19 +1,19 @@
 module DataMemory(ReadData,Address,WriteData,MemWrite,MemRead,Clk);
 	output reg[31:0] ReadData;
-	input wire[9:0] Address;
+	input wire[31:0] Address;
 	input wire[31:0] WriteData;
 	input wire MemWrite;
 	input wire MemRead;
 	input wire Clk;
 
-	integer DataMemory[0:1023];
+	reg [31:0] DataMemory[0:1023];
 	always @(posedge Clk) begin
 		if(MemWrite == 1) begin
-			DataMemory[Address]=WriteData;
-			ReadData = DataMemory[Address];
+			DataMemory[Address]<=WriteData;
+			ReadData <= DataMemory[Address];
 		end
 		else begin
-			ReadData = DataMemory[Address];			
+			ReadData <= DataMemory[Address];			
 		end
 
 	end
@@ -34,14 +34,14 @@ module DataMemory(ReadData,Address,WriteData,MemWrite,MemRead,Clk);
 	integer file;
 	initial begin
 		i=0;
-		file = $fopen("D:\DM.txt");
+		file = $fopen("E:\DM.txt");
 		$fmonitor(file,"%b",i);
 		for(i=0;i<1024;i=i+1) begin
 			#1
 			i=i;
 		end
 		#20
-		$readmemb("D:\DM.txt",DataMemory);	
+		$readmemb("E:\DM.txt",DataMemory);	
 	end
 
 endmodule
