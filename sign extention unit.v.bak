@@ -22,7 +22,7 @@ sign_extend SE(in,out);
 initial
 begin
 in=20;
-$monitor("%b %b",in,out);
+$monitor("%b   %b",in,out);
 
 #10
 in=-110;

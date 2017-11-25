@@ -15,8 +15,8 @@ IM[1]=32'h 02508822;  // sub s1,s2,s0*/
 //IM[0]=32'h0x00008020; // add $s0,$zero,$zero
 //IM[0]=32'h0x8C110000; // lw $s1,0($zero)
 //IM[0]=32'h0x0000B820; // add $s7,$zero,$zero
-//IM[0]=32'h0x8C160000; // lw $s6,0($zero)
-IM[0]=32'h0xAC160000; // sw $s6,0($zero)
+IM[0]=32'h0x8C160000; // lw $s6,0($zero)
+//IM[0]=32'h0xAC160000; // sw $s6,0($zero)
 end
 assign out=IM[read_address>>2];
 
