@@ -20,9 +20,14 @@ IM[1]=32'h 02508822;  // sub s1,s2,s0*/
 
 //IM[0]=32'h0x12110003; // beq $s0,$s1,label
 //IM[0]=32'h0x02328020; // add $s0,$s1,$s2
-IM[0]=32'h0x8e550000; // lw $s5,0($s2)
-IM[1]=32'h0xac0d0000; // sw $t5,0($zero)
-IM[2]=32'h0x0232b020; // label: sub $s6,$s1,$s2
+//IM[0]=32'h0x8e550000; // lw $s5,0($s2)
+//IM[0]=32'h0xac0d0000; // sw $t5,0($zero)
+//IM[1]=32'h0x0232b020; // label: sub $s6,$s1,$s2
+
+IM[0]=32'h0x00000000;
+IM[1]=32'h0x8C100004; // lw $s0,0($zero)
+//IM[1]=32'h0xAC110000; // sw $s1,0($zero)
+
 end
 assign out=IM[read_address>>2];
 

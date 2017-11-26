@@ -34,9 +34,9 @@ pc=0;
 
 //$monitor($time ,,, "alu_control_out : %b ,AluOp : %b ,func : %d",alu_control_out,AluOp,func);
 //$monitor($time ,,,"A:%d,,B:%d,,Result:%d,AluOp:%b ,func:%d ,alu_control_out:%b ",out_RF1,in_ALU1,$signed(output_alu),AluOp,func,alu_control_out);
-$monitor($time ,,, "alu_control_out: %b,AluOp : %b ,func: %d ,pc = %d",alu_control_out,AluOp,func,pc);
+//$monitor($time ,,, "alu_control_out: %b,AluOp : %b ,func: %d ,pc = %d",alu_control_out,AluOp,func,pc);
 
-//$monitor($time ,,, "Memory Output:%d,,Address:%d,,:%d,,MemWrite:%d,,MemRead:%d",ReadData,output_alu,out_RF2,MemWrite,MemRead); // Data Memory Signals
+$monitor($time ,,, "Memory Output:%d,,Address:%d,,MemWrite:%d,,MemRead:%d,pc:%d",ReadData,output_alu,MemWrite,MemRead,pc); // Data Memory Signals
 end
 
 always@(posedge clk)
