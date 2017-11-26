@@ -56,7 +56,7 @@ ALUOp = 2'b00;
 ALUOp = 2'b01;
 #2
 ALUOp = 2'b10;
-func = 0;
+func = 34;
 #2
 ALUOp=2'b10;
 func = 2; 

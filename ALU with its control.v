@@ -8,11 +8,11 @@ always@(ALUOp or func)
 begin
 
 	case(ALUOp)
-/*sw,lw */	2'b01 : begin
+/*sw,lw */	2'b00 : begin
 		         op<=4'b0010;
 		end
 
-/*beq*/		2'b00 : begin
+/*beq*/		2'b01 : begin
 		         op<=4'b0110;
 		end
 

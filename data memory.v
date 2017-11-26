@@ -30,8 +30,8 @@ module DataMemory(ReadData,Address,WriteData,MemWrite,MemRead,Clk);
 
 	reg[31:0] i;
 	integer file;
-	/*initial begin
-		i=0;
+	initial begin
+	/*	i=0;
 		file = $fopen("D:\DM.txt");
 		$fmonitor(file,"%b",i);
 		for(i=0;i<1024;i=i+1) begin
@@ -39,8 +39,8 @@ module DataMemory(ReadData,Address,WriteData,MemWrite,MemRead,Clk);
 			i=i;
 		end
 		#20
-		$readmemb("D:\DM.txt",DataMemory);	
-	end*/
+	*/	$readmemb("D:\DM.txt",DataMemory);	
+	end
 
 endmodule
 
