@@ -8,9 +8,9 @@ reg [15:0] temp;
 always@(in)
 begin
 	if(A==0)
-		temp=16'b 0000_0000_0000_0000;
+		temp<=16'b 0000_0000_0000_0000;
 	else if(A==1)
-		temp=16'b 1111_1111_1111_1111;
+		temp<=16'b 1111_1111_1111_1111;
 end
 assign out[31:16]=temp;
 endmodule
@@ -22,7 +22,7 @@ sign_extend SE(in,out);
 initial
 begin
 in=20;
-$monitor("%b %b",in,out);
+$monitor("%b   %b",in,out);
 
 #10
 in=-110;
@@ -30,4 +30,4 @@ in=-110;
 end
 
 
-endmodule;
+endmodule

@@ -8,11 +8,11 @@ module DataMemory(ReadData,Address,WriteData,MemWrite,MemRead,Clk);
 
 	reg [31:0] DataMemory[0:1023];
 
-	assign ReadData = DataMemory[Address];
+	assign ReadData = DataMemory[Address>>2];
 	always @(posedge Clk) begin
 //		ReadData <= DataMemory[Address];
 		if(MemWrite == 1) begin
-			DataMemory[Address]<=WriteData;
+			DataMemory[Address>>2]<=WriteData;
 		end
 	end
 

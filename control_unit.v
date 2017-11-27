@@ -27,14 +27,14 @@ begin
 if( opcode == R_Format ) 
 	 
       	begin	
-	RegDst = 1; 
-	Branch = 0;
-	MemRead = 0;
-	MemtoReg = 0;
-	AluOp = 10 ;
-	MemWrite = 0;
-	AluSrc = 0;
-	RegWrite = 1;
+	RegDst <= 1; 
+	Branch <= 0;
+	MemRead <= 0;
+	MemtoReg <= 0;
+	AluOp <= 2'b 10 ;
+	MemWrite <= 0;
+	AluSrc <= 0;
+	RegWrite <= 1;
 	end
 
 
@@ -42,14 +42,14 @@ if( opcode == R_Format )
 		
         begin
 
-		RegDst = 0;
-		Branch = 0;
-		MemRead = 1;
-		MemtoReg = 1;
-		AluOp = 00;
-		MemWrite = 0;
-		AluSrc = 1;
-		RegWrite = 1;
+		RegDst <= 0;
+		Branch <= 0;
+		MemRead <= 1;
+		MemtoReg <= 1;
+		AluOp <= 2'b 00;
+		MemWrite <= 0;
+		AluSrc <= 1;
+		RegWrite <= 1;
 	end
 
 
@@ -57,32 +57,45 @@ if( opcode == R_Format )
  else if ( opcode == SW ) 
 	begin
 
-		RegDst =1'bx;
-		Branch = 0;
-		MemRead = 0;
-		MemtoReg = 1'bx;
-		AluOp = 00 ;
-		MemWrite = 1;
-		AluSrc = 1;
-		RegWrite = 0;
+		RegDst <=1'bx;
+		Branch <= 0;
+		MemRead <= 0;
+		MemtoReg <= 1'bx;
+		AluOp <= 2'b 00 ;
+		MemWrite <= 1;
+		AluSrc <= 1;
+		RegWrite <= 0;
 	end
 
 
+
+
+else if (opcode ==Beq)
+	begin
+
+		RegDst <= 1'bx;
+		Branch <= 1;
+		MemRead <= 0;
+		MemtoReg <= 1'bx;
+		AluOp <= 2'b 01;
+		MemWrite <= 0;
+		AluSrc <= 0;
+		RegWrite <= 0;
+	end
 
 
 else
 	begin
 
-		RegDst = 1'bx;
-		Branch = 1;
-		MemRead = 0;
-		MemtoReg = 1'bx;
-		AluOp = 01;
-		MemWrite = 0;
-		AluSrc = 0;
-		RegWrite = 0;
+		RegDst <= 1'bx;
+		Branch <= 0;
+		MemRead <= 0;
+		MemtoReg <= 1'bx;
+		AluOp <= 2'b xx;
+		MemWrite <= 0;
+		AluSrc <= 0;
+		RegWrite <= 0;
 	end
-
 
 
 end

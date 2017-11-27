@@ -24,19 +24,12 @@ wire [31:0]temp1,temp2;
 assign temp1=pc+4;assign temp2=(output_extended*4)+temp1;
 wire [31:0] new_pc;mux m4(temp1,temp2,output_and,new_pc);
 
+
 initial
 begin
 clk=0;
 pc=0;
-//$monitor($time,,,,"ALU Out or Mem Address %d OUT RF2 %d MEMWRITE %d ,, Memory Output %d",$signed(output_alu),out_RF2,MemWrite,ReadData);
-
-//$monitor($time,,,"ALUSRC %d ,, OpCode %d",AluSrc,opcode);
-
-//$monitor($time ,,, "alu_control_out : %b ,AluOp : %b ,func : %d",alu_control_out,AluOp,func);
-//$monitor($time ,,,"A:%d,,B:%d,,Result:%d,AluOp:%b ,func:%d ,alu_control_out:%b ",out_RF1,in_ALU1,$signed(output_alu),AluOp,func,alu_control_out);
-//$monitor($time ,,, "alu_control_out: %b,AluOp : %b ,func: %d ,pc = %d",alu_control_out,AluOp,func,pc);
-
-$monitor($time ,,, "Memory Output:%d,,Address:%d,,MemWrite:%d,,MemRead:%d,pc:%d",ReadData,output_alu,MemWrite,MemRead,pc); // Data Memory Signals
+$monitor($time,,,"%d   %d",out_instruction,output_alu);
 end
 
 always@(posedge clk)
@@ -59,15 +52,11 @@ initial
 begin
 clk=0;
 end
-
-
 always
 begin
 	#5
 	clk=~clk;
 end
-
-
 mips_processor MP(clk);
 endmodule
 */

@@ -5,11 +5,11 @@ output integer o1;
 always @(in1 or in2 or mux_control)
 begin
 if(mux_control==0)
-begin  o1=in1;     end
+begin  o1<=in1;     end
 else if(mux_control==1)
-begin   o1=in2;     end
+begin   o1<=in2;     end
 else
-begin    o1=32'bxxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx;          end
+begin    o1<=32'bxxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx;          end
 end
 endmodule
 

@@ -18,17 +18,17 @@ begin
 
 /*RType*/	2'b10 : begin
         	        case(func)
-		        32 : begin  op=4'b0010; end //add
-		        36 : begin  op=4'b0000; end //and
-		        34 : begin  op=4'b0110; end //sub
-		        0  : begin  op=4'b0100; end //sll
-		        2  : begin  op=4'b0101; end //srl
+		        32 : begin  op<=4'b0010; end //add
+		        36 : begin  op<=4'b0000; end //and
+		        34 : begin  op<=4'b0110; end //sub
+		        0  : begin  op<=4'b0100; end //sll
+		        2  : begin  op<=4'b0101; end //srl
 			default : begin op=4'bxxxx; end
 		        endcase
 			end	
 
 		default : begin
-			   op=4'bxxxx;
+			   op<=4'bxxxx;
 		end
 	endcase
 end
@@ -117,7 +117,7 @@ always @(A or B or op or shift_amt) begin
 				overflow <= 0;
 			end*/
 			default: begin
-				result <= 32'hxxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx;
+				result <= 32'bxxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx;
 				//overflow <= 1'bx;
 			end
 		endcase
