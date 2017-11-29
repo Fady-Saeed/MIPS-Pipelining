@@ -1,4 +1,4 @@
-module mux(in1,in2,mux_control,o1);
+module mux2(in1,in2,mux_control,o1);
 input [31:0] in1,in2;
 input mux_control;
 output integer o1; 
@@ -14,7 +14,7 @@ end
 endmodule
 
 
-module test_mux;
+module test_mux2;
 reg mux_control;
 reg [31:0]in1,in2;
 wire[31:0] o1;
@@ -30,6 +30,6 @@ mux_control=1;
 mux_control=1'bx;
 
 end
-mux M(in1,in2,mux_control,o1);
+mux2 M(in1,in2,mux_control,o1);
 
 endmodule
