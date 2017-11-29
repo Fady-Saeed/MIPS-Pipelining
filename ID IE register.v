@@ -1,5 +1,5 @@
-module ID_IE_register(WB_control,M_control,EX_control,
-_WB_control,_M_control,RegDst,AluOp,AluSrc,
+module ID_IE_register(WB_control,M_control,EX_control,branch,
+_WB_control,_M_control,RegDst,AluOp,AluSrc,_branch,
 pc_plus_four,_pc_plus_four,
 read_data1,read_data2,_read_data1,_read_data2,
 immediate,_immediate,alu_control_input,
@@ -17,6 +17,9 @@ output reg [1:0] _M_control;
 input wire [3:0] EX_control;
 output reg [1:0] AluOp;output reg RegDst,AluSrc;
 
+input wire branch;
+output reg _branch;
+
 input wire [31:0] pc_plus_four;output reg [31:0] _pc_plus_four;
 input wire [31:0] read_data1,read_data2;output reg [31:0] _read_data1,_read_data2;
 input wire [31:0] immediate;output reg [31:0] _immediate;output reg [5:0] alu_control_input;
@@ -26,6 +29,7 @@ always@(posedge clk)
 begin
 _WB_control<=WB_control;_M_control<=M_control;
 RegDst<=EX_control[0];AluOp<=EX_control[2:1];AluSrc<=EX_control[3];
+_branch<=branch;
 _pc_plus_four<=pc_plus_four;
 _read_data1<=read_data1;_read_data2<=read_data2;
 _immediate<=immediate;alu_control_input<=immediate[5:0];
