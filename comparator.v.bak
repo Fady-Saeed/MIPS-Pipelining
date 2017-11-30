@@ -1,0 +1,27 @@
+module comparator(out,in1,in2);
+	input [31:0] in1,in2;
+	output out;
+	wire[31:0] result;
+	assign result = in1 ^ in2;
+	assign out = ~(result[0]|result[1]|result[2]|result[3]|result[4]|result[5]|result[6]|result[7]|result[8]|result[9]|result[10]|result[11]|result[12]|result[13]|result[14]|result[15]|result[16]|result[17]|result[18]|result[19]|result[20]|result[21]|result[22]|result[23]|result[24]|result[25]|result[26]|result[27]|result[28]|result[29]|result[30]|result[31]);
+endmodule
+
+module test_comparator;
+	reg[31:0] in1,in2;
+	wire out;
+	initial begin
+		$monitor("In1:%h,In2:%h,Out:%h",in1,in2,out);
+		in1=32'hFFFFFFFF;
+		in2=32'hFFFFFFF0;
+		#10
+		in1=32'hFFFFEFFF;
+		in2=32'hFFFFFFFF;
+		#10
+		in1=32'hFFFFFFFF;
+		in2=32'hFFFF3FFF;
+		#10
+		in1=32'hFFFFFFFF;
+		in2=32'hFFFFFFFF;
+	end
+	comparator C1(out,in1,in2);
+endmodule

@@ -1,0 +1,135 @@
+{C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mips integration.v} {1 {vlog -work MIPS_Pipelining -stats=none {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mips integration.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module mips_processor
+
+Top level modules:
+	mips_processor
+
+} {} {}} {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/sign extention unit.v} {1 {vlog -work MIPS_Pipelining -stats=none {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/sign extention unit.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module sign_extend
+-- Compiling module test_sign_extention
+
+Top level modules:
+	test_sign_extention
+
+} {} {}} {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/ALU with its control.v} {1 {vlog -work MIPS_Pipelining -stats=none {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/ALU with its control.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ALU_CNTRL
+-- Compiling module AluCntrlTB
+-- Compiling module ALU
+-- Compiling module test_ALU
+-- Compiling module ALUandCNTRLTB
+
+Top level modules:
+	AluCntrlTB
+	test_ALU
+	ALUandCNTRLTB
+
+} {} {}} C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/control_unit.v {1 {vlog -work MIPS_Pipelining -stats=none C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/control_unit.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ControlUnit
+-- Compiling module testcontrolunit
+
+Top level modules:
+	testcontrolunit
+
+} {} {}} {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/ID IE register.v} {1 {vlog -work MIPS_Pipelining -stats=none {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/ID IE register.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ID_IE_register
+
+Top level modules:
+	ID_IE_register
+
+} {} {}} C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/twotoonemux.v {1 {vlog -work MIPS_Pipelining -stats=none C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/twotoonemux.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module mux2
+-- Compiling module test_mux2
+
+Top level modules:
+	test_mux2
+
+} {} {}} C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/ForwardingUnit.v {1 {vlog -work work -stats=none C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/ForwardingUnit.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Forwarding_Unit
+-- Compiling module testforward
+
+Top level modules:
+	testforward
+
+} {} {}} {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/instruction memory.v} {1 {vlog -work MIPS_Pipelining -stats=none {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/instruction memory.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module instruction_memory
+
+Top level modules:
+	instruction_memory
+
+} {} {}} C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/registerfile.v {1 {vlog -work MIPS_Pipelining -stats=none C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/registerfile.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module registerfile
+-- Compiling module test_register_file
+
+Top level modules:
+	test_register_file
+
+} {} {}} {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/MEM WB register.v} {1 {vlog -work MIPS_Pipelining -stats=none {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/MEM WB register.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module MEM_WB_register
+
+Top level modules:
+	MEM_WB_register
+
+} {} {}} {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/3 input mux.v} {1 {vlog -work MIPS_Pipelining -stats=none {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/3 input mux.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module mux3
+-- Compiling module test_mux3
+
+Top level modules:
+	test_mux3
+
+} {} {}} C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/comparator.v {1 {vlog -work MIPS_Pipelining -stats=none C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/comparator.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module comparator
+-- Compiling module test_comparator
+
+Top level modules:
+	test_comparator
+
+} {} {}} C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mux_5bits.v {1 {vlog -work MIPS_Pipelining -stats=none C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mux_5bits.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module M5
+
+Top level modules:
+	M5
+
+} {} {}} {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IF ID register.v} {1 {vlog -work MIPS_Pipelining -stats=none {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IF ID register.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module IF_ID_register
+
+Top level modules:
+	IF_ID_register
+
+} {} {}} {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IE MEM register.v} {1 {vlog -work MIPS_Pipelining -stats=none {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IE MEM register.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module IE_MEM_register
+
+Top level modules:
+	IE_MEM_register
+
+} {} {}} C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/PC.v {1 {vlog -work MIPS_Pipelining -stats=none C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/PC.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module pc_register
+-- Compiling module test_pc
+
+Top level modules:
+	test_pc
+
+} {} {}} {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/data memory.v} {1 {vlog -work MIPS_Pipelining -stats=none {C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/data memory.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module DataMemory
+-- Compiling module Test_DataMemory
+
+Top level modules:
+	Test_DataMemory
+
+} {} {}}
