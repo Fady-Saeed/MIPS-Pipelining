@@ -1,7 +1,7 @@
 module HazardDetectionUnit(IDIE_MemRead,IDIE_rt,IFID_rs,IFID_rt,IFIDWrite,PCWrite,IFID_MemWrite,IFID_MemRead ,IFID_RegWrite);
 input wire IDIE_MemRead , IFID_MemWrite , IFID_MemRead , IFID_RegWrite; /*MemRead checks if instruction is lw , MemWrite checks if instruction is sw , RegWrite checks if instruction is R-format */
 input wire[4:0] IDIE_rt,IFID_rs,IFID_rt;
-output reg IFIDWrite,PCWrite; /*hold IFID and PC for one clk cycle*/
+output reg IFIDWrite,PCWrite,StallOrControl; /*hold IFID and PC for one clk cycle*/
 
 always@(IFID_rs or IFID_rt or IDIE_rt or IDIE_MemRead or IFID_MemWrite or IFID_MemRead or IFID_RegWrite)
 begin
@@ -10,17 +10,19 @@ begin
 			/* if rt of lw in IDIE is equal to rs of sw in IFID */ (IDIE_MemRead && IFID_MemWrite && (IDIE_rt == IFID_rs))
 		||      /* if rt of lw in IDIE is equal to rs of lw in IFID */ (IDIE_MemRead && IFID_MemRead && (IDIE_rt == IFID_rs))
 		||      /* if rt of lw in IDIE is equal to rt of R-format in IFID*/ (IDIE_MemRead && IFID_RegWrite && (IDIE_rt == IFID_rt))
-		||	/* if rt of lw in IDIE is equal to rs of R-format in IFID*/ (IFID_MemRead && IFID_RegWrite && (IDIE_rt == IFID_rs))
+		||	/* if rt of lw in IDIE is equal to rs of R-format in IFID*/ (IDIE_MemRead && IFID_RegWrite && (IDIE_rt == IFID_rs))
 		   )		
 		begin 
-			IFIDWrite=1; //hold of IFID pipeline register
-			PCWrite=1; //hold of PC	
+			IFIDWrite<=1; //hold of IFID pipeline register
+			PCWrite<=1; //hold of PC	
+			StallOrControl<=1; // Put Zeroes on Control Signals
 		end
 		
 		else
 		begin
-			IFIDWrite=0;
-			PCWrite=0;
+			IFIDWrite<=0;
+			PCWrite<=0;
+			StallOrControl<=0;
 		end
 end
 endmodule 

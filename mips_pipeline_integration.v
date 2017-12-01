@@ -5,19 +5,20 @@ module mips_pipeline_integration;
 				 IF STAGE
 	*************************************************************/
 
-	wire[31:0] pc,pc_plus_four,pc_branch,PCInput;
-	assign pc_plus_four = pc+4;
+	wire[31:0] pc_plus_four,pc_branch,PCInput;
+	wire[31:0] read_address_im;
+	assign pc_plus_four = read_address_im+4;
 
 	//PC MUX Control Using AND
-	and A1(pc_mux_control,IDIE_branch,equal_flag); // Branch Control from Control Unit ,, Equal Flag from Comparator or ALU
+	and A1(pc_mux_control,branch_control,equal_flag); // Branch Control from Control Unit ,, Equal Flag from Comparator or ALU
 	/* Branch Control May Change */
 
 	// PC MUX Module
-	mux2 PCMux(pc_branch,pc_plus_four,pc_mux_control,PCInput); // pc_branch From IE Stage
+	mux2 PCMux(pc_plus_four,pc_branch,pc_mux_control,PCInput); // pc_branch From IE Stage
 
 	// PC Module
 	wire hazard_pc_hold; // From ID Stage ( Hazard Detection unit )
-	wire[31:0] read_address_im;
+
 	pc_register PCReg(PCInput,read_address_im,hazard_pc_hold,clk);
 
 	// Instruction Memory Module
@@ -30,7 +31,7 @@ module mips_pipeline_integration;
 	wire [4:0] rr1,rr2;
 	wire [15:0] immediate_address;
 	wire [4:0] rs,rt,rt_extra,rd;
-	IF_ID_register IFIDReg(pc_plus_four,out_im,IFID_pc_plus_four,op_code,rr1,rr2,immediate_address,rs,rt,rt_extra,rd,hold,clk);//na2es input bta3 control hazard	
+	IF_ID_register IFIDReg(pc_plus_four,out_im,IFID_pc_plus_four,op_code,rr1,rr2,immediate_address,rs,rt,rt_extra,rd,IFID_hold,clk);//na2es input bta3 control hazard	
 
 	/************************************************************
 				 ID STAGE
@@ -57,6 +58,10 @@ module mips_pipeline_integration;
 	assign control_zeroes=9'b000000000;
 
 	/****** 	     Hazard Detection Unit Part			*****/
+	// Hazard Detection Control Unit
+	wire[1:0] IDIE_M_control;
+	wire[4:0] IDIE_rt;
+	HazardDetectionUnit HDU(IDIE_M_control[1],IDIE_rt,rs,rt,IFID_hold,hazard_pc_hold,StallOrControl,MemWrite,MemRead ,RegWrite);
 	
 	wire[8:0] control_signals,control_signals_;
 	assign control_signals = {RegWrite,MemtoReg,MemRead,MemWrite,AluSrc,AluOp,RegDst,branch_control};
@@ -64,11 +69,11 @@ module mips_pipeline_integration;
 
 
 	// ID/IE Pipeline Register
-	wire[1:0] IDIE_WB_control,IDIE_M_control,IDIE_AluOp;
+	wire[1:0] IDIE_WB_control,IDIE_AluOp;
 	wire[31:0] IDIE_immediate_extended;
 	wire[31:0] IDIE_pc_plus_four;
 	wire[31:0] IDIE_read_data1,IDIE_read_data2;
-	wire[4:0] IDIE_rs,IDIE_rt,IDIE_rt_extra,IDIE_rd;
+	wire[4:0] IDIE_rs,IDIE_rt_extra,IDIE_rd;
 	wire[5:0] alu_control_input;
 
 	ID_IE_register IDIEReg(control_signals_[8:7],control_signals_[6:5],control_signals_[4:1],control_signals_[0],
@@ -107,7 +112,7 @@ module mips_pipeline_integration;
 
 	// Forwarding Unit
 	wire[4:0] EXMEM_DestinationReg;
-	Forwarding_Unit FWUnit( ALUMux1Selector , ALUMux2Selector ,  IDIE_rs , IDIE_rt , EXMEM_DestinationReg , MEMWB_rd , EXMEM_RegWrite, MEMWB_RegWrite );
+	Forwarding_Unit FWUnit( ALUMux1Selector , ALUMux2Selector ,  IDIE_rs , IDIE_rt , EXMEM_DestinationReg , MEMWB_DestinationReg , EXMEM_RegWrite, MEMWB_RegWrite );
 	
 	// EXMEM Register
 	wire[31:0] EXMEM_immediate_extended;
@@ -143,6 +148,17 @@ module mips_pipeline_integration;
 	/************************************************************
 				 WB STAGE
 	*************************************************************/
-	mux2 MemToRegMux(MEMWB_ReadData,MEMWB_ALUResult,MEMWB_MemtoReg,write_data);
+	mux2 MemToRegMux(MEMWB_ALUResult,MEMWB_ReadData,MEMWB_MemtoReg,write_data);
+
+	
+	initial begin
+		clk=0;
+	end
+	always begin
+	#1 clk=~clk;
+	end
+	initial begin
+		$monitor($time ,,, "ALU Result:%d,EXMEM_ALUResult:%d,MEMWB_ALUResult:%d,,,  MEMWB_ReadData:%d,MEMWB_ALUResult:%d,MEMWB_MemtoReg:%d,write_data:%d",ALUResult,EXMEM_ALUResult,MEMWB_ALUResult,MEMWB_ReadData,MEMWB_ALUResult,MEMWB_MemtoReg,write_data);
+	end
 
 endmodule

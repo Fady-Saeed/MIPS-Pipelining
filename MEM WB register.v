@@ -27,6 +27,12 @@ _ReadData<=ReadData;
 _AluResult<=AluResult;
 _Destenation<=Destenation;
 end
-
+initial begin
+MemtoReg<=0;
+RegWrite<=0;
+_ReadData<=0;
+_AluResult<=0;
+_Destenation<=0;
+end
 
 endmodule

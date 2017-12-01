@@ -183,14 +183,58 @@ Z33 !s90 -reportprogress|300|-work|work|-stats=none|C:/Modeltech_pe_edu_10.4a/ex
 !i113 1
 Z34 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
 n@forwarding_@unit
-vID_IE_register
-R18
+vHazardDetectionUnit
+Z35 !s110 1512137540
 !i10b 1
-!s100 PV=h^l@MBL6AVK^=G1<7c1
-I6H<=?_YIQ@L7LZ5m@FUz01
+!s100 5]77zmzXjddPjYdIHohEi0
+I0FOdU6XC8BBS:2?OA]CVe1
 R1
 R2
-w1512038986
+Z36 w1512137517
+Z37 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/Hazaard Detection Unit.v
+Z38 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/Hazaard Detection Unit.v
+L0 1
+R6
+r1
+!s85 0
+31
+Z39 !s108 1512137540.000000
+Z40 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/Hazaard Detection Unit.v|
+Z41 !s90 -reportprogress|300|-work|work|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/Hazaard Detection Unit.v|
+!s101 -O0
+!i113 1
+R34
+n@hazard@detection@unit
+vHDUTB
+R35
+!i10b 1
+!s100 D:^8N7@a3W@_8PJGl0m0_0
+Il8^6>>`NA]hh7CGX`_UEZ3
+R1
+R2
+R36
+R37
+R38
+L0 30
+R6
+r1
+!s85 0
+31
+R39
+R40
+R41
+!s101 -O0
+!i113 1
+R34
+n@h@d@u@t@b
+vID_IE_register
+!s110 1512132129
+!i10b 1
+!s100 i;7VU@?`nGk:@e>NFgIAU1
+I3Eh7lQ^KQDCVGHC6fZ82n0
+R1
+R2
+w1512132127
 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/ID IE register.v
 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/ID IE register.v
 L0 1
@@ -198,7 +242,7 @@ R6
 r1
 !s85 0
 31
-Z35 !s108 1512058712.000000
+!s108 1512132128.000000
 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/ID IE register.v|
 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/ID IE register.v|
 !s101 -O0
@@ -206,13 +250,13 @@ Z35 !s108 1512058712.000000
 R10
 n@i@d_@i@e_register
 vIE_MEM_register
-R18
+!s110 1512132284
 !i10b 1
-!s100 ZGPO7mjE<lTGR]zJ>@1^e1
-I9UIYjNJ6YDANUJg>inFgF2
+!s100 ejKeP?iMOP?ogFiOTge@;0
+Ib@BAG<W2Nnn2SCn=j@f243
 R1
 R2
-Z36 w1511962596
+w1512132282
 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IE MEM register.v
 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IE MEM register.v
 L0 1
@@ -220,7 +264,7 @@ R6
 r1
 !s85 0
 31
-R35
+!s108 1512132284.000000
 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IE MEM register.v|
 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IE MEM register.v|
 !s101 -O0
@@ -228,13 +272,13 @@ R35
 R10
 n@i@e_@m@e@m_register
 vIF_ID_register
-!s110 1512070426
+!s110 1512136598
 !i10b 1
-!s100 ``n;[ZPCbzfLdiZd3k4fK3
-IKndXV9dHQOH>EYLh@95FD3
+!s100 K>oG9W@7E2ehZGSf42<md3
+IGVhaBoXLH46aO]8_oLiT53
 R1
 R2
-w1512058998
+w1512132220
 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IF ID register.v
 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IF ID register.v
 L0 1
@@ -242,7 +286,7 @@ R6
 r1
 !s85 0
 31
-!s108 1512070426.000000
+!s108 1512136598.000000
 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IF ID register.v|
 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/IF ID register.v|
 !s101 -O0
@@ -250,13 +294,13 @@ r1
 R10
 n@i@f_@i@d_register
 vinstruction_memory
-R18
+!s110 1512140511
 !i10b 1
-!s100 SLEm6aEa[kF:Qemocc17X0
-If2bf9[MOGcT6e]_NU=MED1
+!s100 P_4M:4CU6UFLj]4^<[GUi1
+IASg`^CjkCIWVH_<An@C0W3
 R1
 R2
-w1512058248
+w1512140504
 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/instruction memory.v
 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/instruction memory.v
 L0 1
@@ -264,14 +308,14 @@ R6
 r1
 !s85 0
 31
-R35
+!s108 1512140511.000000
 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/instruction memory.v|
 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/instruction memory.v|
 !s101 -O0
 !i113 1
 R10
 vM5
-Z37 !s110 1512058713
+Z42 !s110 1512058713
 !i10b 1
 !s100 DaW`dJ[PizhLTCnj0dQ9k3
 IP8gWZT=WHDPFc]T1zRci62
@@ -285,7 +329,7 @@ R6
 r1
 !s85 0
 31
-Z38 !s108 1512058713.000000
+Z43 !s108 1512058713.000000
 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mux_5bits.v|
 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mux_5bits.v|
 !s101 -O0
@@ -293,13 +337,13 @@ Z38 !s108 1512058713.000000
 R10
 n@m5
 vMEM_WB_register
-R37
+!s110 1512132289
 !i10b 1
-!s100 A_QQR55IPFeW>:9EP[?Y?2
-I?VY;V?Bz:92c;2g3k=1c61
+!s100 e9<nbWA]KbeROZi[Gj<>:1
+IIIoT46[gWCLZl7edA=<e82
 R1
 R2
-w1512055594
+w1512132163
 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/MEM WB register.v
 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/MEM WB register.v
 L0 1
@@ -307,7 +351,7 @@ R6
 r1
 !s85 0
 31
-R38
+!s108 1512132289.000000
 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/MEM WB register.v|
 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/MEM WB register.v|
 !s101 -O0
@@ -315,13 +359,13 @@ R38
 R10
 n@m@e@m_@w@b_register
 vmips_pipeline_integration
-!s110 1512130293
+!s110 1512140506
 !i10b 1
-!s100 ^J1G_GBFKRMogckUWLFc23
-IX2`mhW>baS07;D8dL03mB3
+!s100 k7Mji<lzL2L<i@K=c3cAh2
+I<5SYzjJXimUPMLGUi?TkK2
 R1
 R2
-w1512130289
+w1512140480
 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mips_pipeline_integration.v
 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mips_pipeline_integration.v
 L0 1
@@ -329,14 +373,14 @@ R6
 r1
 !s85 0
 31
-!s108 1512130293.000000
+!s108 1512140506.000000
 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mips_pipeline_integration.v|
 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mips_pipeline_integration.v|
 !s101 -O0
 !i113 1
 R10
 vmips_processor
-R37
+R42
 !i10b 1
 !s100 O@dfie2jmln>NW@^I8=aZ1
 ImQBC3gUPS5=?5n=fS]VAE2
@@ -350,7 +394,7 @@ R6
 r1
 !s85 0
 31
-R38
+R43
 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mips integration.v|
 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/mips integration.v|
 !s101 -O0
@@ -363,17 +407,17 @@ R0
 IGn;J]e4`i5C?ThDXaMYc82
 R1
 R2
-R36
-Z39 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/twotoonemux.v
-Z40 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/twotoonemux.v
+Z44 w1511962596
+Z45 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/twotoonemux.v
+Z46 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/twotoonemux.v
 L0 1
 R6
 r1
 !s85 0
 31
 R7
-Z41 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/twotoonemux.v|
-Z42 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/twotoonemux.v|
+Z47 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/twotoonemux.v|
+Z48 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/twotoonemux.v|
 !s101 -O0
 !i113 1
 R10
@@ -384,59 +428,59 @@ R0
 I^h]OdDdLb[78kf^di`MaK2
 R1
 R2
-R36
-Z43 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/3 input mux.v
-Z44 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/3 input mux.v
+R44
+Z49 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/3 input mux.v
+Z50 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/3 input mux.v
 L0 1
 R6
 r1
 !s85 0
 31
 R7
-Z45 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/3 input mux.v|
-Z46 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/3 input mux.v|
+Z51 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/3 input mux.v|
+Z52 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/3 input mux.v|
 !s101 -O0
 !i113 1
 R10
 vpc_register
-Z47 !s110 1512130080
+Z53 !s110 1512135574
 !i10b 1
 !s100 _Pi;]_ZccR0Q3UUWeV1fL3
 IICZF;SeTCe1:47AT@NNl63
 R1
 R2
-Z48 w1512039048
-Z49 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/PC.v
-Z50 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/PC.v
+Z54 w1512039048
+Z55 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/PC.v
+Z56 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/PC.v
 L0 1
 R6
 r1
 !s85 0
 31
-Z51 !s108 1512130080.000000
-Z52 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/PC.v|
-Z53 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/PC.v|
+Z57 !s108 1512135574.000000
+Z58 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/PC.v|
+Z59 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/PC.v|
 !s101 -O0
 !i113 1
 R10
 vregisterfile
-R37
+R42
 !i10b 1
 !s100 ZSCGYiaD1Cj9Dz`GES^?Z3
 IO<1e=kWaSL<KgTGUBh03?0
 R1
 R2
-Z54 w1511528779
-Z55 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/registerfile.v
-Z56 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/registerfile.v
+Z60 w1511528779
+Z61 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/registerfile.v
+Z62 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/registerfile.v
 L0 1
 R6
 r1
 !s85 0
 31
-R38
-Z57 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/registerfile.v|
-Z58 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/registerfile.v|
+R43
+Z63 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/registerfile.v|
+Z64 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/registerfile.v|
 !s101 -O0
 !i113 1
 R10
@@ -448,16 +492,16 @@ I8H88H:VSN`jjC2ITMKIf72
 R1
 R2
 R3
-Z59 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/sign extention unit.v
-Z60 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/sign extention unit.v
+Z65 8C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/sign extention unit.v
+Z66 FC:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/sign extention unit.v
 L0 1
 R6
 r1
 !s85 0
 31
 R15
-Z61 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/sign extention unit.v|
-Z62 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/sign extention unit.v|
+Z67 !s107 C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/sign extention unit.v|
+Z68 !s90 -reportprogress|300|-work|MIPS_Pipelining|-stats=none|C:/Modeltech_pe_edu_10.4a/examples/MIPS_Pipelining/sign extention unit.v|
 !s101 -O0
 !i113 1
 R10
@@ -533,17 +577,17 @@ R0
 ICQTgnP=mE<a^3]XdfN2lc2
 R1
 R2
-R36
-R39
-R40
-Z63 L0 17
+R44
+R45
+R46
+Z69 L0 17
 R6
 r1
 !s85 0
 31
 R7
-R41
-R42
+R47
+R48
 !s101 -O0
 !i113 1
 R10
@@ -554,59 +598,59 @@ R0
 IYL=[IcBnU?gn9f9QYVdL63
 R1
 R2
-R36
-R43
 R44
+R49
+R50
 L0 21
 R6
 r1
 !s85 0
 31
 R7
-R45
-R46
+R51
+R52
 !s101 -O0
 !i113 1
 R10
 vtest_pc
-R47
+R53
 !i10b 1
 !s100 Y?>ZNabEVZFe<NM@Jk>oU2
 IMP46:dYmm`K_6K57EI[Ee2
 R1
 R2
-R48
-R49
-R50
-R63
+R54
+R55
+R56
+R69
 R6
 r1
 !s85 0
 31
-R51
-R52
-R53
+R57
+R58
+R59
 !s101 -O0
 !i113 1
 R10
 vtest_register_file
-R37
+R42
 !i10b 1
 !s100 1When4V=1_f:=5FbleVo93
 I^3VBFZW5^<FXmUzg=F?=>3
 R1
 R2
-R54
-R55
-R56
+R60
+R61
+R62
 L0 35
 R6
 r1
 !s85 0
 31
-R38
-R57
-R58
+R43
+R63
+R64
 !s101 -O0
 !i113 1
 R10
@@ -618,16 +662,16 @@ IaMHIeAYZfLRS;KK=z`gK53
 R1
 R2
 R3
-R59
-R60
+R65
+R66
 L0 18
 R6
 r1
 !s85 0
 31
 R15
-R61
-R62
+R67
+R68
 !s101 -O0
 !i113 1
 R10

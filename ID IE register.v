@@ -36,6 +36,16 @@ _immediate<=immediate;alu_control_input<=immediate[5:0];
 _rs<=rs;_rt<=rt;_rt_extra<=rt_extra;_rd<=rd;
 end
 
+initial begin
+_WB_control<=0;_M_control<=0;
+RegDst<=0;AluOp<=0;AluSrc<=0;
+_branch<=0;
+_pc_plus_four<=0;
+_read_data1<=0;_read_data2<=0;
+_immediate<=0;alu_control_input<=0;
+_rs<=0;_rt<=0;_rt_extra<=0;_rd<=0;
+
+end
 
 
 endmodule

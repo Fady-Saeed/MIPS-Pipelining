@@ -1,6 +1,6 @@
 module IF_ID_register(pc_plus_four,out_instruction,
 _pc_plus_four,op_code,rr1,rr2,immediate_address,rs,rt,rt_extra,rd,
-/*hold,*/
+hold,
 clk);//na2es output bta3 control hazard
 input wire [31:0] pc_plus_four,out_instruction;
 output reg [31:0] _pc_plus_four;

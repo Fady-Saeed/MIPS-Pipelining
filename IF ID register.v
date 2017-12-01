@@ -22,6 +22,15 @@ rt_extra<=out_instruction[20:16];rd<=out_instruction[15:11];
 end
 end
 
+initial begin
+_pc_plus_four<=0;
+op_code<=0;
+rr1<=0;rr2<=0;
+immediate_address<=0;
+rs<=0;rt<=0;
+rt_extra<=0;rd<=0;
+end
+
 
 endmodule
 

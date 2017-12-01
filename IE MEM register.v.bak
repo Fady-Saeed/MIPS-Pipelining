@@ -36,14 +36,4 @@ _mux1<=mux1;
 _mux2<=mux2;
 end
 
-initial begin
-_WB_control<=0;
-MemRead<=0;
-MemWrite<=0;
-_alu_result<=0;
-_immediate<=0;
-_mux1<=0;
-_mux2<=0;
-end
-
 endmodule
