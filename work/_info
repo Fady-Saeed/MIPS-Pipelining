@@ -1,0 +1,53 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/fady/Desktop/New folder/MIPS-Pipelining
+vForwarding_Unit
+Z1 !s110 1512168205
+!i10b 1
+!s100 EC1<C=n_;O_GW]C592lNh0
+I?F58MY[`0lEbGioMG_eEg0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1512168141
+Z4 8C:/Users/fady/Desktop/New folder/MIPS-Pipelining/ForwardingUnit.v
+Z5 FC:/Users/fady/Desktop/New folder/MIPS-Pipelining/ForwardingUnit.v
+L0 1
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1512168205.000000
+Z8 !s107 C:/Users/fady/Desktop/New folder/MIPS-Pipelining/ForwardingUnit.v|
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/fady/Desktop/New folder/MIPS-Pipelining/ForwardingUnit.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@forwarding_@unit
+vtestforward
+R1
+!i10b 1
+!s100 agX;1>8HPe706SLIz>i4e3
+ILTQVDSYkJ:OFa]^oRP;P<1
+R2
+R0
+R3
+R4
+R5
+L0 58
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

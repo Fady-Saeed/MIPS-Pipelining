@@ -12,114 +12,39 @@ input [4:0]  rs , rt , rd3 , rd4 ;
 
 input reg_write_exe , reg_write_mem ;
 
-reg [3:0] where;
-
-initial
-
-begin
-
-$monitor ( $time ,,,,"outputs are in same order of inputs : %b %b %b %b %b %b %b %b %b " , where, control_mux1 , control_mux2 ,  rs , rt , rd3 , rd4 , reg_write_exe, reg_write_mem );
-
-end
-
-
 always @ ( rs ,rt , rd3 , rd4 , reg_write_exe , reg_write_mem )
-
-
 begin
-
-	if ( reg_write_exe == 1 &&  ( reg_write_mem == 0 || reg_write_mem==1'bx)  )    ////  Forwarding may occur from third pipelined register
+if(reg_write_exe)
+begin
+	if((rs==rd3) &&(rd3!=0))
 	begin
-
-	if ( ( rs == rd3 ) && (rd3 != 5'b00000) )
-
+		control_mux1 = 2'b10 ;
+	end
+	else if((rt==rd3) &&(rd3!=0))
 	begin
-		
-	control_mux1 = 2'b10 ;
-
-	where = 4'b0000;
-		
+		control_mux2 = 2'b10;
 	end
-	else begin
-		control_mux1 = 2'b00;
-	end
-	
-	if( rt == rd3 && rd3 != 5'b00000 )
-	
+end
+if(reg_write_mem)
+begin
+	if((rs==rd4) &&(rd4!=0))
 	begin
-	
-	control_mux2 = 2'b10 ;
-
-	where = 4'b0001;
+		control_mux1 = 2'b01 ;
 	end
-	else begin
-		control_mux2 = 2'b00;
-	end
-	
-	end
-
-	else if ( reg_write_mem == 1 && reg_write_exe != 1 )   ///// Forwarding may occur from fourth pipelined register.
-
+	else if((rt==rd4) &&(rd4!=0))
 	begin
-	
-	if ( rd4 != 5'b00000 && rd4 == rs )
-
+		control_mux2 = 2'b01;
+	end
+end
+else
 	begin
-	
-	control_mux1 = 2'b01 ;
-	where = 4'b0010;
-
-	end
-	
-	else control_mux1 = 2'b00;
-	
-	if( rd4 != 5'b00000 && rd4 == rt )
-
-	begin
-	
-	control_mux2 = 2'b01;
-	where = 4'b0011;
-	end
-
-	else control_mux2 = 2'b00;
-
-	end
-
-
-	else if ( reg_write_exe == 1 && reg_write_mem ==1) ////// Forwarding may occur from third pipelined register.
-
-	begin
-	
-	if ( (rd3 == rd4 || rd3 == rs) && rd3 != 5'b00000 )
-
-	begin
-	
-	control_mux1 = 2'b10 ;
-	where = 4'b0100;
-	end
-
-	else control_mux1 = 2'b00;
-
-	if ( (rd3 == rd4 || rd3 == rt) && rd3 != 5'b00000 )
-	begin
-	control_mux2 = 2'b10 ;
-	where = 4'b0101;
-	end
-	
-	else control_mux2 = 2'b00;
-
-	end
-	
-	else 
- 	begin
-	control_mux1 = 2'b00 ;
-	control_mux2 = 2'b00;
-	where = 4'b 1111;
+		control_mux1 = 2'b00 ;
+		control_mux2 = 2'b00 ;
 	end
 
 end
 
-	
+
 endmodule
 
 
