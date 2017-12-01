@@ -32,7 +32,7 @@ IM[1]=32'h 8D0B0000;//lw $t3, 0($t0)
 
 //IM[0]=32'h0x8C100004; // lw $s0,0($zero)
 //IM[1]=32'h0xAC110000; // sw $s1,0($zero)
-
+IM[0]=32'h0x02328020; // add $s0,$s1,$s2
 end
 assign out=IM[read_address>>2];
 

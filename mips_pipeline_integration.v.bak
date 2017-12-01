@@ -1,8 +1,8 @@
 module mips_pipeline_integration;
-	wire clk; // Will be input wire clk
+	reg clk; // Will be input wire clk
 
 	/************************************************************
-				 ID STAGE
+				 IF STAGE
 	*************************************************************/
 
 	wire[31:0] pc,pc_plus_four,pc_branch,PCInput;
@@ -17,6 +17,7 @@ module mips_pipeline_integration;
 
 	// PC Module
 	wire hazard_pc_hold; // From ID Stage ( Hazard Detection unit )
+	wire[31:0] read_address_im;
 	pc_register PCReg(PCInput,read_address_im,hazard_pc_hold,clk);
 
 	// Instruction Memory Module
@@ -29,17 +30,16 @@ module mips_pipeline_integration;
 	wire [4:0] rr1,rr2;
 	wire [15:0] immediate_address;
 	wire [4:0] rs,rt,rt_extra,rd;
-	IF_ID_register IFIDReg(pc_plus_four,out_im,
-	IFID_pc_plus_four,op_code,rr1,rr2,immediate_address,rs,rt,rt_extra,rd,
-	clk);//na2es input bta3 control hazard	
+	IF_ID_register IFIDReg(pc_plus_four,out_im,IFID_pc_plus_four,op_code,rr1,rr2,immediate_address,rs,rt,rt_extra,rd,hold,clk);//na2es input bta3 control hazard	
 
 	/************************************************************
-				 IF STAGE
+				 ID STAGE
 	*************************************************************/
 
 	// Register File
 	wire[4:0] write_register;
 	wire[31:0] write_data,read_data1,read_data2;
+	wire[4:0] MEMWB_DestinationReg;
 	registerfile RF(rr1,rr2,MEMWB_DestinationReg,write_data,MEMWB_RegWrite,read_data1,read_data2,clk); 
 	// write_register,write_data,RegWrite from WB Stage
 
@@ -81,7 +81,7 @@ module mips_pipeline_integration;
 	clk
 	);
 	/************************************************************
-				 IE STAGE
+				 EX STAGE
 	*************************************************************/
 	// RegDst Mux
 	wire[4:0] DestinationReg;
@@ -106,13 +106,15 @@ module mips_pipeline_integration;
 	assign pc_branch = IDIE_immediate_extended<<2 + IDIE_pc_plus_four;
 
 	// Forwarding Unit
+	wire[4:0] EXMEM_DestinationReg;
 	Forwarding_Unit FWUnit( ALUMux1Selector , ALUMux2Selector ,  IDIE_rs , IDIE_rt , EXMEM_DestinationReg , MEMWB_rd , EXMEM_RegWrite, MEMWB_RegWrite );
 	
 	// EXMEM Register
 	wire[31:0] EXMEM_immediate_extended;
 	wire[1:0] EXMEM_WB_control;
+	wire[31:0] EXMEM_ALUIn2_ALUSrcIn;
 	IE_MEM_register IEMEMReg(IDIE_WB_control,IDIE_M_control,
-	EXMEM_WB_control,MemRead,MemWrite,
+	EXMEM_WB_control,EXMEM_MemRead,EXMEM_MemWrite,
 	ALUResult,EXMEM_ALUResult,
 	IDIE_immediate_extended,EXMEM_immediate_extended,
 	ALUIn2_ALUSrcIn,EXMEM_ALUIn2_ALUSrcIn,
@@ -125,22 +127,22 @@ module mips_pipeline_integration;
 	*************************************************************/
 
 	// Data Memory
-	wire[31:0] ReadData;
+	wire[31:0] ReadData,MEMWB_ALUResult;
 	assign EXMEM_RegWrite = EXMEM_WB_control[1];
 
-	DataMemory DM(ReadData,EXMEM_ALUResult,EXMEM_ALUIn2_ALUSrcIn,MemWrite,MemRead,clk);
+	DataMemory DM(ReadData,EXMEM_ALUResult,EXMEM_ALUIn2_ALUSrcIn,EXMEM_MemWrite,EXMEM_MemRead,clk);
 	
 	// MEM WB Register
 	MEM_WB_register MEMWBReg(
-	EXMEM_WB_control,MemtoReg,MEMWB_RegWrite,
+	EXMEM_WB_control,MEMWB_MemtoReg,MEMWB_RegWrite,
 	ReadData,MEMWB_ReadData,
 	EXMEM_ALUResult,MEMWB_ALUResult,
 	EXMEM_DestinationReg,MEMWB_DestinationReg,
 	clk);
 
 	/************************************************************
-				 MEM STAGE
+				 WB STAGE
 	*************************************************************/
-	mux2 MemToRegMux(MEMWB_ReadData,MEMWB_ALUResult,MemtoReg,write_data);
+	mux2 MemToRegMux(MEMWB_ReadData,MEMWB_ALUResult,MEMWB_MemtoReg,write_data);
 
 endmodule
