@@ -1,4 +1,4 @@
-module HazardDetectionUnit(IDIE_MemRead,IDIE_rt,IFID_rs,IFID_rt,IFIDWrite,PCWrite,IFID_MemWrite,IFID_MemRead ,IFID_RegWrite);
+module HazardDetectionUnit(IDIE_MemRead,IDIE_rt,IFID_rs,IFID_rt,IFIDWrite,PCWrite,StallOrControl,IFID_MemWrite,IFID_MemRead ,IFID_RegWrite);
 input wire IDIE_MemRead , IFID_MemWrite , IFID_MemRead , IFID_RegWrite; /*MemRead checks if instruction is lw , MemWrite checks if instruction is sw , RegWrite checks if instruction is R-format */
 input wire[4:0] IDIE_rt,IFID_rs,IFID_rt;
 output reg IFIDWrite,PCWrite,StallOrControl; /*hold IFID and PC for one clk cycle*/

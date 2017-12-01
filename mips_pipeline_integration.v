@@ -61,7 +61,7 @@ module mips_pipeline_integration;
 	// Hazard Detection Control Unit
 	wire[1:0] IDIE_M_control;
 	wire[4:0] IDIE_rt;
-	HazardDetectionUnit HDU(IDIE_M_control[1],IDIE_rt,rs,rt,IFID_hold,hazard_pc_hold,StallOrControl,MemWrite,MemRead ,RegWrite);
+	HazardDetectionUnit HDU(IDIE_M_control[1],IDIE_rt,rs,rt,IFID_hold,hazard_pc_hold,StallOrControl,MemWrite,MemRead,RegWrite,branch_control);
 	
 	wire[8:0] control_signals,control_signals_;
 	assign control_signals = {RegWrite,MemtoReg,MemRead,MemWrite,AluSrc,AluOp,RegDst,branch_control};

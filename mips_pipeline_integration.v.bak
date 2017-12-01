@@ -148,7 +148,7 @@ module mips_pipeline_integration;
 	/************************************************************
 				 WB STAGE
 	*************************************************************/
-	mux2 MemToRegMux(MEMWB_ReadData,MEMWB_ALUResult,MEMWB_MemtoReg,write_data);
+	mux2 MemToRegMux(MEMWB_ALUResult,MEMWB_ReadData,MEMWB_MemtoReg,write_data);
 
 	
 	initial begin

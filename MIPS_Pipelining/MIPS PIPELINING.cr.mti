@@ -1,0 +1,150 @@
+{C:/Users/Mario/Desktop/Repo/Hazaard Detection Unit.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/Hazaard Detection Unit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module HazardDetectionUnit
+-- Compiling module HDUTB
+
+Top level modules:
+	HDUTB
+
+} {} {}} {C:/Users/Mario/Desktop/Repo/IE MEM register.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/IE MEM register.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module IE_MEM_register
+
+Top level modules:
+	IE_MEM_register
+
+} {} {}} C:/Users/Mario/Desktop/Repo/PC.v {1 {vlog -work work -stats=none C:/Users/Mario/Desktop/Repo/PC.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pc_register
+-- Compiling module test_pc
+
+Top level modules:
+	test_pc
+
+} {} {}} {C:/Users/Mario/Desktop/Repo/data memory.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/data memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module DataMemory
+-- Compiling module Test_DataMemory
+
+Top level modules:
+	Test_DataMemory
+
+} {} {}} {C:/Users/Mario/Desktop/Repo/mips integration.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/mips integration.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mips_processor
+
+Top level modules:
+	mips_processor
+
+} {} {}} {C:/Users/Mario/Desktop/Repo/sign extention unit.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/sign extention unit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sign_extend
+-- Compiling module test_sign_extention
+
+Top level modules:
+	test_sign_extention
+
+} {} {}} {C:/Users/Mario/Desktop/Repo/ALU with its control.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/ALU with its control.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_CNTRL
+-- Compiling module AluCntrlTB
+-- Compiling module ALU
+-- Compiling module test_ALU
+-- Compiling module ALUandCNTRLTB
+
+Top level modules:
+	AluCntrlTB
+	test_ALU
+	ALUandCNTRLTB
+
+} {} {}} C:/Users/Mario/Desktop/Repo/control_unit.v {1 {vlog -work work -stats=none C:/Users/Mario/Desktop/Repo/control_unit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ControlUnit
+-- Compiling module testcontrolunit
+
+Top level modules:
+	testcontrolunit
+
+} {} {}} {C:/Users/Mario/Desktop/Repo/ID IE register.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/ID IE register.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ID_IE_register
+
+Top level modules:
+	ID_IE_register
+
+} {} {}} C:/Users/Mario/Desktop/Repo/mips_pipeline_integration.v {1 {vlog -work work -stats=none C:/Users/Mario/Desktop/Repo/mips_pipeline_integration.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mips_pipeline_integration
+
+Top level modules:
+	mips_pipeline_integration
+
+} {} {}} C:/Users/Mario/Desktop/Repo/twotoonemux.v {1 {vlog -work work -stats=none C:/Users/Mario/Desktop/Repo/twotoonemux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mux2
+-- Compiling module test_mux2
+
+Top level modules:
+	test_mux2
+
+} {} {}} C:/Users/Mario/Desktop/Repo/ForwardingUnit.v {1 {vlog -work work -stats=none C:/Users/Mario/Desktop/Repo/ForwardingUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Forwarding_Unit
+-- Compiling module testforward
+
+Top level modules:
+	testforward
+
+} {} {}} {C:/Users/Mario/Desktop/Repo/instruction memory.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/instruction memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module instruction_memory
+
+Top level modules:
+	instruction_memory
+
+} {} {}} C:/Users/Mario/Desktop/Repo/registerfile.v {1 {vlog -work work -stats=none C:/Users/Mario/Desktop/Repo/registerfile.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module registerfile
+-- Compiling module test_register_file
+
+Top level modules:
+	test_register_file
+
+} {} {}} {C:/Users/Mario/Desktop/Repo/MEM WB register.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/MEM WB register.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module MEM_WB_register
+
+Top level modules:
+	MEM_WB_register
+
+} {} {}} {C:/Users/Mario/Desktop/Repo/3 input mux.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/3 input mux.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mux3
+-- Compiling module test_mux3
+
+Top level modules:
+	test_mux3
+
+} {} {}} C:/Users/Mario/Desktop/Repo/mux_5bits.v {1 {vlog -work work -stats=none C:/Users/Mario/Desktop/Repo/mux_5bits.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module M5
+
+Top level modules:
+	M5
+
+} {} {}} C:/Users/Mario/Desktop/Repo/comparator.v {1 {vlog -work work -stats=none C:/Users/Mario/Desktop/Repo/comparator.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module comparator
+-- Compiling module test_comparator
+
+Top level modules:
+	test_comparator
+
+} {} {}} {C:/Users/Mario/Desktop/Repo/IF ID register.v} {1 {vlog -work work -stats=none {C:/Users/Mario/Desktop/Repo/IF ID register.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module IF_ID_register
+
+Top level modules:
+	IF_ID_register
+
+} {} {}}

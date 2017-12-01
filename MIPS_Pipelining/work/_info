@@ -1,0 +1,719 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Modeltech_pe_edu_10.4a/examples
+vALU
+Z0 !s110 1512157807
+!i10b 1
+!s100 nKed=8SKMNj=z3_R2D2fo2
+I;9TLXz_UZ_P6Q^QC;DD2V3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Mario/Desktop/Repo/MIPS_Pipelining
+Z3 w1512070095
+Z4 8C:/Users/Mario/Desktop/Repo/ALU with its control.v
+Z5 FC:/Users/Mario/Desktop/Repo/ALU with its control.v
+L0 71
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1512157807.000000
+Z8 !s107 C:/Users/Mario/Desktop/Repo/ALU with its control.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/ALU with its control.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@a@l@u
+vALU_CNTRL
+R0
+!i10b 1
+!s100 9MCo[QdVLjJ:3g^01Ihoh1
+I674RBKmejDIAm^Hn6zd`50
+R1
+R2
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@a@l@u_@c@n@t@r@l
+vALUandCNTRLTB
+R0
+!i10b 1
+!s100 bdVZR<7PN@6m1<f>>2VQ11
+INl3gi1Di16zJ:P4I4_2450
+R1
+R2
+R3
+R4
+R5
+L0 153
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@a@l@uand@c@n@t@r@l@t@b
+vAluCntrlTB
+R0
+!i10b 1
+!s100 K;mNWO^S_DC3kCCBW1]BC1
+IYC?DT9<I@TBiO6[Q3=8B<2
+R1
+R2
+R3
+R4
+R5
+L0 41
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@alu@cntrl@t@b
+vcomparator
+R0
+!i10b 1
+!s100 ]lajhhL^N?>_>Ibg2VI5g3
+IBR@NR2QfFmkFYo5;CG@@G3
+R1
+R2
+R3
+Z12 8C:/Users/Mario/Desktop/Repo/comparator.v
+Z13 FC:/Users/Mario/Desktop/Repo/comparator.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+Z14 !s107 C:/Users/Mario/Desktop/Repo/comparator.v|
+Z15 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/comparator.v|
+!i113 1
+R10
+R11
+vControlUnit
+R0
+!i10b 1
+!s100 JBnPCFdD7VNX[lMAz]FRl2
+Iag42e?aM8BSgQMd:g@ARX1
+R1
+R2
+R3
+Z16 8C:/Users/Mario/Desktop/Repo/control_unit.v
+Z17 FC:/Users/Mario/Desktop/Repo/control_unit.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+Z18 !s107 C:/Users/Mario/Desktop/Repo/control_unit.v|
+Z19 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/control_unit.v|
+!i113 1
+R10
+R11
+n@control@unit
+vDataMemory
+R0
+!i10b 1
+!s100 >bE:F24F3`f>Hkj4VWLiH2
+I;N8_<g2bDijY;]OQGUL5Y3
+R1
+R2
+R3
+Z20 8C:/Users/Mario/Desktop/Repo/data memory.v
+Z21 FC:/Users/Mario/Desktop/Repo/data memory.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+Z22 !s107 C:/Users/Mario/Desktop/Repo/data memory.v|
+Z23 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/data memory.v|
+!i113 1
+R10
+R11
+n@data@memory
+vForwarding_Unit
+R0
+!i10b 1
+!s100 Tm_^NKMfTGf7cjCCFD<Qi3
+IVFYD:LMK^KYilQ@XzI`Pn0
+R1
+R2
+R3
+Z24 8C:/Users/Mario/Desktop/Repo/ForwardingUnit.v
+Z25 FC:/Users/Mario/Desktop/Repo/ForwardingUnit.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+Z26 !s107 C:/Users/Mario/Desktop/Repo/ForwardingUnit.v|
+Z27 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/ForwardingUnit.v|
+!i113 1
+R10
+R11
+n@forwarding_@unit
+vHazardDetectionUnit
+R0
+!i10b 1
+!s100 kT_5QO92@7d7P4K6^D`j<3
+I?QiO9MNUM;lMG4S9ZA3F]3
+R1
+R2
+Z28 w1512156954
+Z29 8C:/Users/Mario/Desktop/Repo/Hazaard Detection Unit.v
+Z30 FC:/Users/Mario/Desktop/Repo/Hazaard Detection Unit.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+Z31 !s107 C:/Users/Mario/Desktop/Repo/Hazaard Detection Unit.v|
+Z32 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/Hazaard Detection Unit.v|
+!i113 1
+R10
+R11
+n@hazard@detection@unit
+vHDUTB
+R0
+!i10b 1
+!s100 z?NzoOLT=mD7?llmZ=W8n1
+I1zE8OR_;ZX20b]bmN5:8:3
+R1
+R2
+R28
+R29
+R30
+L0 32
+R6
+r1
+!s85 0
+31
+R7
+R31
+R32
+!i113 1
+R10
+R11
+n@h@d@u@t@b
+vID_IE_register
+R0
+!i10b 1
+!s100 i;7VU@?`nGk:@e>NFgIAU1
+I3HR9L^@B@Q80B1T_;^5CM3
+R1
+R2
+Z33 w1512155763
+8C:/Users/Mario/Desktop/Repo/ID IE register.v
+FC:/Users/Mario/Desktop/Repo/ID IE register.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/Mario/Desktop/Repo/ID IE register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/ID IE register.v|
+!i113 1
+R10
+R11
+n@i@d_@i@e_register
+vIE_MEM_register
+Z34 !s110 1512157808
+!i10b 1
+!s100 ejKeP?iMOP?ogFiOTge@;0
+IM236NPn?Q^O8dPPl_K?j`2
+R1
+R2
+R33
+8C:/Users/Mario/Desktop/Repo/IE MEM register.v
+FC:/Users/Mario/Desktop/Repo/IE MEM register.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/Mario/Desktop/Repo/IE MEM register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/IE MEM register.v|
+!i113 1
+R10
+R11
+n@i@e_@m@e@m_register
+vIF_ID_register
+R34
+!i10b 1
+!s100 K>oG9W@7E2ehZGSf42<md3
+IVRQMlZC`KNMUUX1H0Hm:^3
+R1
+R2
+R33
+8C:/Users/Mario/Desktop/Repo/IF ID register.v
+FC:/Users/Mario/Desktop/Repo/IF ID register.v
+L0 1
+R6
+r1
+!s85 0
+31
+Z35 !s108 1512157808.000000
+!s107 C:/Users/Mario/Desktop/Repo/IF ID register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/IF ID register.v|
+!i113 1
+R10
+R11
+n@i@f_@i@d_register
+vinstruction_memory
+!s110 1512158419
+!i10b 1
+!s100 P_4M:4CU6UFLj]4^<[GUi1
+IKFFUkSS17l>`<l=jYCDCk1
+R1
+R2
+R33
+8C:/Users/Mario/Desktop/Repo/instruction memory.v
+FC:/Users/Mario/Desktop/Repo/instruction memory.v
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1512158419.000000
+!s107 C:/Users/Mario/Desktop/Repo/instruction memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/instruction memory.v|
+!i113 1
+R10
+R11
+vM5
+R34
+!i10b 1
+!s100 DaW`dJ[PizhLTCnj0dQ9k3
+I@Gm17KMAL@?mSQiz3mIgM1
+R1
+R2
+R3
+8C:/Users/Mario/Desktop/Repo/mux_5bits.v
+FC:/Users/Mario/Desktop/Repo/mux_5bits.v
+L0 1
+R6
+r1
+!s85 0
+31
+R35
+!s107 C:/Users/Mario/Desktop/Repo/mux_5bits.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/mux_5bits.v|
+!i113 1
+R10
+R11
+n@m5
+vMEM_WB_register
+R34
+!i10b 1
+!s100 e9<nbWA]KbeROZi[Gj<>:1
+IiN[HLX3hf;d3[1GcHKa5I2
+R1
+R2
+R33
+8C:/Users/Mario/Desktop/Repo/MEM WB register.v
+FC:/Users/Mario/Desktop/Repo/MEM WB register.v
+L0 1
+R6
+r1
+!s85 0
+31
+R35
+!s107 C:/Users/Mario/Desktop/Repo/MEM WB register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/MEM WB register.v|
+!i113 1
+R10
+R11
+n@m@e@m_@w@b_register
+vmips_pipeline_integration
+R34
+!i10b 1
+!s100 81o:Oa1lPozaA7WTeC[^J2
+IEJEYHj?O]gFffXaiVV6D53
+R1
+R2
+w1512157795
+8C:/Users/Mario/Desktop/Repo/mips_pipeline_integration.v
+FC:/Users/Mario/Desktop/Repo/mips_pipeline_integration.v
+L0 1
+R6
+r1
+!s85 0
+31
+R35
+!s107 C:/Users/Mario/Desktop/Repo/mips_pipeline_integration.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/mips_pipeline_integration.v|
+!i113 1
+R10
+R11
+vmips_processor
+R34
+!i10b 1
+!s100 O@dfie2jmln>NW@^I8=aZ1
+IKOYcdfWBJ020_Oz46MdmO3
+R1
+R2
+R3
+8C:/Users/Mario/Desktop/Repo/mips integration.v
+FC:/Users/Mario/Desktop/Repo/mips integration.v
+L0 1
+R6
+r1
+!s85 0
+31
+R35
+!s107 C:/Users/Mario/Desktop/Repo/mips integration.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/mips integration.v|
+!i113 1
+R10
+R11
+vmux2
+Z36 !s110 1512157806
+!i10b 1
+!s100 lK2l_kM?JcGm3zn[kRVJz3
+IeK97?mlmTZ:lQSe@R8D>X3
+R1
+R2
+R3
+Z37 8C:/Users/Mario/Desktop/Repo/twotoonemux.v
+Z38 FC:/Users/Mario/Desktop/Repo/twotoonemux.v
+L0 1
+R6
+r1
+!s85 0
+31
+Z39 !s108 1512157806.000000
+Z40 !s107 C:/Users/Mario/Desktop/Repo/twotoonemux.v|
+Z41 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/twotoonemux.v|
+!i113 1
+R10
+R11
+vmux3
+R0
+!i10b 1
+!s100 MI7]Wa@PbIS`2fzHVPQ?_0
+I?D1YM34=cPDYW7Uk^bY`>2
+R1
+R2
+R3
+Z42 8C:/Users/Mario/Desktop/Repo/3 input mux.v
+Z43 FC:/Users/Mario/Desktop/Repo/3 input mux.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+Z44 !s107 C:/Users/Mario/Desktop/Repo/3 input mux.v|
+Z45 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/3 input mux.v|
+!i113 1
+R10
+R11
+vpc_register
+R34
+!i10b 1
+!s100 _Pi;]_ZccR0Q3UUWeV1fL3
+IkZd[GDWedG`M]2TXMZgm>3
+R1
+R2
+R3
+Z46 8C:/Users/Mario/Desktop/Repo/PC.v
+Z47 FC:/Users/Mario/Desktop/Repo/PC.v
+L0 1
+R6
+r1
+!s85 0
+31
+R35
+Z48 !s107 C:/Users/Mario/Desktop/Repo/PC.v|
+Z49 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/PC.v|
+!i113 1
+R10
+R11
+vregisterfile
+R34
+!i10b 1
+!s100 ZSCGYiaD1Cj9Dz`GES^?Z3
+IH[IR;MmgX=SZ01ma^DkCj1
+R1
+R2
+R3
+Z50 8C:/Users/Mario/Desktop/Repo/registerfile.v
+Z51 FC:/Users/Mario/Desktop/Repo/registerfile.v
+L0 1
+R6
+r1
+!s85 0
+31
+R35
+Z52 !s107 C:/Users/Mario/Desktop/Repo/registerfile.v|
+Z53 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/registerfile.v|
+!i113 1
+R10
+R11
+vsign_extend
+Z54 !s110 1512157809
+!i10b 1
+!s100 DJaT[0Sm>DGG0MUa?J6=K3
+I3ea^MdzgTGRJVfV5XgFYK2
+R1
+R2
+R3
+Z55 8C:/Users/Mario/Desktop/Repo/sign extention unit.v
+Z56 FC:/Users/Mario/Desktop/Repo/sign extention unit.v
+L0 1
+R6
+r1
+!s85 0
+31
+Z57 !s108 1512157809.000000
+Z58 !s107 C:/Users/Mario/Desktop/Repo/sign extention unit.v|
+Z59 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Mario/Desktop/Repo/sign extention unit.v|
+!i113 1
+R10
+R11
+vtest_ALU
+R0
+!i10b 1
+!s100 B:HEgkj_H8XaPk;^U^DFj2
+I>C=Di39:Xhi_UZ[cz6:=V2
+R1
+R2
+R3
+R4
+R5
+L0 130
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+ntest_@a@l@u
+vtest_comparator
+R0
+!i10b 1
+!s100 b?5iNn^dWk`PI;[l<8N=82
+Ia4RFXCERC46MP=c6Yo1Ao2
+R1
+R2
+R3
+R12
+R13
+L0 8
+R6
+r1
+!s85 0
+31
+R7
+R14
+R15
+!i113 1
+R10
+R11
+vTest_DataMemory
+R0
+!i10b 1
+!s100 [TF=6[iPSIP6YH:5;l[TO2
+IaD3jDEoOalj:aB1DZ0]Do2
+R1
+R2
+R3
+R20
+R21
+L0 51
+R6
+r1
+!s85 0
+31
+R7
+R22
+R23
+!i113 1
+R10
+R11
+n@test_@data@memory
+vtest_mux2
+R36
+!i10b 1
+!s100 hPBZajK<Dl<hk4hin;CSz3
+I2_JD8KYH?G`B;^V_1LMdE1
+R1
+R2
+R3
+R37
+R38
+Z60 L0 17
+R6
+r1
+!s85 0
+31
+R39
+R40
+R41
+!i113 1
+R10
+R11
+vtest_mux3
+R0
+!i10b 1
+!s100 i@<=C8h]>EV=QBheKLJLn3
+IHYK_^87A9l>8<bUoo:ESN2
+R1
+R2
+R3
+R42
+R43
+L0 21
+R6
+r1
+!s85 0
+31
+R7
+R44
+R45
+!i113 1
+R10
+R11
+vtest_pc
+R34
+!i10b 1
+!s100 Y?>ZNabEVZFe<NM@Jk>oU2
+IAdWXhcPAQ2:AFTHhL]c_D3
+R1
+R2
+R3
+R46
+R47
+R60
+R6
+r1
+!s85 0
+31
+R35
+R48
+R49
+!i113 1
+R10
+R11
+vtest_register_file
+R34
+!i10b 1
+!s100 1When4V=1_f:=5FbleVo93
+Il`ZTGWM9>WEEglnDJnH_E0
+R1
+R2
+R3
+R50
+R51
+L0 35
+R6
+r1
+!s85 0
+31
+R35
+R52
+R53
+!i113 1
+R10
+R11
+vtest_sign_extention
+R54
+!i10b 1
+!s100 <H931Ra5a9T^nk0X19^CO3
+Ij9^U_^8Q^88:?A@IekhS]1
+R1
+R2
+R3
+R55
+R56
+L0 18
+R6
+r1
+!s85 0
+31
+R57
+R58
+R59
+!i113 1
+R10
+R11
+vtestcontrolunit
+R0
+!i10b 1
+!s100 PMPYH^nUiLl9XHQ0PU9[H0
+IIozfPCGYBNkT^^zJfJhN71
+R1
+R2
+R3
+R16
+R17
+L0 117
+R6
+r1
+!s85 0
+31
+R7
+R18
+R19
+!i113 1
+R10
+R11
+vtestforward
+R0
+!i10b 1
+!s100 Z@D?WWzJAaGYI7hTNfG0D2
+IE4::ea:SGTa:Q>Defl>[z0
+R1
+R2
+R3
+R24
+R25
+L0 133
+R6
+r1
+!s85 0
+31
+R7
+R26
+R27
+!i113 1
+R10
+R11
