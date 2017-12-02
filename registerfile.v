@@ -2,13 +2,13 @@ module registerfile(read_register1,read_register2,write_register,in_data,write_e
 input [4:0] read_register1,read_register2,write_register;
 input write_enable,clk;
 input [31:0] in_data;
-output  [31:0] read_data1,read_data2;
+output wire  [31:0] read_data1,read_data2;
 reg[31:0] R [0:31];
 
 assign read_data1=R[read_register1];
 assign read_data2=R[read_register2];
 
-always @(posedge clk)
+always @(negedge clk)
 begin
 if(write_enable==1)
 begin
