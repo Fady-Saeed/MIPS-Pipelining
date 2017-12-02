@@ -4,15 +4,25 @@ output wire [31:0] out;
 reg [31:0] IM [0:1023];//instruction memory is 4KB,address is 32 bit
 initial
 begin
-IM[0]=32'h 8e120000;
-IM[1]=32'h 02529820;
-//IM[2]=32'h 02119820;
-//IM[3]=32'h 
+IM[0]=32'h 02128020;
+IM[1]=32'h 02129022;
+IM[2]=32'h 02729820;
+IM[3]=32'h 0272a022;
+IM[4]=32'h 0292a020;
 /*
-beq $s1,$s2,label
-add $s0,$s0,$s0
-add $s1,%s1,$s1
-label:sub $s1,$s1,$s1
+add $s0,$s0,$s2 s0=34
+sub $s2,$s0,$s2 s2=16 
+add $s3,$s3,$s2 s3=35
+sub $s4,$s3,$s2 s4=19 
+add $s4,$s4,$s2 s4=36
+
+02128020
+02129022
+02729820
+0272a022
+0292a020
+
+
 */
 
 

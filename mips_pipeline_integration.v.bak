@@ -97,8 +97,8 @@ module mips_pipeline_integration;
 	wire[31:0] MEMWB_ALUResult;
 
 	mux2 RegDstMux(IDIE_rt_extra,IDIE_rd,IDIE_RegDst,DestinationReg);
-	mux3 ALUMux1(IDIE_read_data1,MEMWB_ALUResult,EXMEM_ALUResult,ALUMux1Selector,ALUIn1); // MEMWB_DestinationReg From WB Stage
-	mux3 ALUMux2(IDIE_read_data2,MEMWB_ALUResult,EXMEM_ALUResult,ALUMux2Selector,ALUIn2_ALUSrcIn);
+	mux3 ALUMux1(IDIE_read_data1,write_data,EXMEM_ALUResult,ALUMux1Selector,ALUIn1); // MEMWB_DestinationReg From WB Stage
+	mux3 ALUMux2(IDIE_read_data2,write_data,EXMEM_ALUResult,ALUMux2Selector,ALUIn2_ALUSrcIn);
 	mux2 ALUIn2Mux(ALUIn2_ALUSrcIn,IDIE_immediate_extended,IDIE_AluSrc,ALUIn2);
 	// ALU Control
 	wire[3:0] op;
@@ -159,7 +159,7 @@ module mips_pipeline_integration;
 	#5 clk<=~clk;
 	end
 	initial begin
-	$monitor($time,,,"%d  %d  %d   %d",read_address_im,ALUMux1Selector,ALUMux2Selector,ReadData);
+	$monitor($time,,,"%d  %d  %d   %d",);
 		end
 
 endmodule

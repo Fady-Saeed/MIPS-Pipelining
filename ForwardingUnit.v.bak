@@ -20,10 +20,14 @@ begin
 	begin
 		control_mux1 <= 2'b01 ;
 	end
-	else if((rt==rd4) &&(rd4!=0))
+	else
+	begin control_mux1 <= 2'b00 ; end 
+	if((rt==rd4) &&(rd4!=0))
 	begin
 		control_mux2 <= 2'b01;
 	end
+	else
+	begin control_mux2 <= 2'b00 ; end 
 end
 
 if(reg_write_exe)
@@ -32,10 +36,14 @@ begin
 	begin
 		control_mux1 <= 2'b10 ;
 	end
-	else if((rt==rd3) &&(rd3!=0))
+	else if(!(rs==rd4))
+	begin control_mux1 <= 2'b00 ; end 
+	if((rt==rd3) &&(rd3!=0))
 	begin
 		control_mux2 <= 2'b10;
 	end
+	else if(!(st==rd4))
+	begin control_mux2 <= 2'b00 ; end 
 end
 
 else

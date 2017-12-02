@@ -159,7 +159,7 @@ module mips_pipeline_integration;
 	#5 clk<=~clk;
 	end
 	initial begin
-	$monitor($time,,,"%d  %d  %d   %d",read_address_im,ALUMux1Selector,ALUMux2Selector,ReadData);
+	$monitor($time,,,"%d  %d   %d",out_im,ALUMux1Selector,ALUMux2Selector);
 		end
 
 endmodule
