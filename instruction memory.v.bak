@@ -4,12 +4,22 @@ output wire [31:0] out;
 reg [31:0] IM [0:1023];//instruction memory is 4KB,address is 32 bit
 initial
 begin
-IM[0]=32'h 02318820;
-IM[1]=32'h 02319020;
+IM[0]=32'h 02318820; 
+IM[1]=32'h 8e120000;
+IM[2]=32'h 02529820;
+//IM[2]=32'h 02119820;
+//IM[3]=32'h 
 /*
-add $s1,$s1,$s1
-add $s2,$s1,$s1
+beq $s1,$s2,label
+add $s0,$s0,$s0
+add $s1,%s1,$s1
+label:sub $s1,$s1,$s1
 */
+
+
+
+
+
 
 //IM[2]=32'h 0000B820;
 //IM[3]=32'h AC160000;

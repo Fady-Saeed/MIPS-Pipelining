@@ -1,16 +1,18 @@
-module HazardDetectionUnit(IDIE_MemRead,IDIE_rt,IFID_rs,IFID_rt,IFIDWrite,PCWrite,StallOrControl,IFID_MemWrite,IFID_MemRead ,IFID_RegWrite);
-input wire IDIE_MemRead , IFID_MemWrite , IFID_MemRead , IFID_RegWrite; /*MemRead checks if instruction is lw , MemWrite checks if instruction is sw , RegWrite checks if instruction is R-format */
+module HazardDetectionUnit(IDIE_MemRead,IDIE_rt,IFID_rs,IFID_rt,IFIDWrite,PCWrite,StallOrControl,IFID_MemWrite,IFID_MemRead ,IFID_RegWrite,IFID_branch);
+input wire IDIE_MemRead , IFID_MemWrite , IFID_MemRead , IFID_RegWrite , IFID_branch; /*MemRead checks if instruction is lw , MemWrite checks if instruction is sw , RegWrite checks if instruction is R-format , Branch bayna ya3ni */
 input wire[4:0] IDIE_rt,IFID_rs,IFID_rt;
 output reg IFIDWrite,PCWrite,StallOrControl; /*hold IFID and PC for one clk cycle*/
 
-always@(IFID_rs or IFID_rt or IDIE_rt or IDIE_MemRead or IFID_MemWrite or IFID_MemRead or IFID_RegWrite)
+always@(IFID_rs or IFID_rt or IDIE_rt or IDIE_MemRead or IFID_MemWrite or IFID_MemRead or IFID_RegWrite or IFID_branch)
 begin
 
 		if( 
 			/* if rt of lw in IDIE is equal to rs of sw in IFID */ (IDIE_MemRead && IFID_MemWrite && (IDIE_rt == IFID_rs))
 		||      /* if rt of lw in IDIE is equal to rs of lw in IFID */ (IDIE_MemRead && IFID_MemRead && (IDIE_rt == IFID_rs))
-		||      /* if rt of lw in IDIE is equal to rt of R-format in IFID*/ (IDIE_MemRead && IFID_RegWrite && (IDIE_rt == IFID_rt))
-		||	/* if rt of lw in IDIE is equal to rs of R-format in IFID*/ (IDIE_MemRead && IFID_RegWrite && (IDIE_rt == IFID_rs))
+		||      /* if rt of lw in IDIE is equal to rt of R-format in IFID */ (IDIE_MemRead && IFID_RegWrite && (IDIE_rt == IFID_rt))
+		||	/* if rt of lw in IDIE is equal to rs of R-format in IFID */ (IDIE_MemRead && IFID_RegWrite && (IDIE_rt == IFID_rs))
+		||      /* if rt of lw in IDIE is equal to rs of Beq in IFID */ (IDIE_MemRead && IFID_branch && (IDIE_rt == IFID_rs))
+		||      /* if rt of lw in IDIE is equal to rt of Beq in IFID */ (IDIE_MemRead && IFID_branch && (IDIE_rt == IFID_rt))
 		   )		
 		begin 
 			IFIDWrite<=1; //hold of IFID pipeline register

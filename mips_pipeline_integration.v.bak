@@ -94,10 +94,11 @@ module mips_pipeline_integration;
 	wire[31:0] ALUIn1,ALUIn2_ALUSrcIn,ALUIn2;
 
 	wire[31:0] EXMEM_ALUResult;
+	wire[31:0] MEMWB_ALUResult;
 
 	mux2 RegDstMux(IDIE_rt_extra,IDIE_rd,IDIE_RegDst,DestinationReg);
-	mux3 ALUMux1(IDIE_read_data1,MEMWB_DestinationReg,EXMEM_ALUResult,ALUMux1Selector,ALUIn1); // MEMWB_DestinationReg From WB Stage
-	mux3 ALUMux2(IDIE_read_data2,MEMWB_DestinationReg,EXMEM_ALUResult,ALUMux2Selector,ALUIn2_ALUSrcIn);
+	mux3 ALUMux1(IDIE_read_data1,MEMWB_ALUResult,EXMEM_ALUResult,ALUMux1Selector,ALUIn1); // MEMWB_DestinationReg From WB Stage
+	mux3 ALUMux2(IDIE_read_data2,MEMWB_ALUResult,EXMEM_ALUResult,ALUMux2Selector,ALUIn2_ALUSrcIn);
 	mux2 ALUIn2Mux(ALUIn2_ALUSrcIn,IDIE_immediate_extended,IDIE_AluSrc,ALUIn2);
 	// ALU Control
 	wire[3:0] op;
@@ -132,7 +133,7 @@ module mips_pipeline_integration;
 	*************************************************************/
 
 	// Data Memory
-	wire[31:0] ReadData,MEMWB_ALUResult,MEMWB_ReadData;
+	wire[31:0] ReadData,MEMWB_ReadData;
 	assign EXMEM_RegWrite = EXMEM_WB_control[1];
 
 	DataMemory DM(ReadData,EXMEM_ALUResult,EXMEM_ALUIn2_ALUSrcIn,EXMEM_MemWrite,EXMEM_MemRead,clk);
@@ -158,7 +159,7 @@ module mips_pipeline_integration;
 	#5 clk<=~clk;
 	end
 	initial begin
-	$monitor($time,,,"%d  %h",out_im,ALUMux1Selector,ALUMux1Selector);
+	$monitor($time,,,"%d  %d  %d   %d",read_address_im,ALUMux1Selector,ALUMux2Selector,ReadData);
 		end
 
 endmodule

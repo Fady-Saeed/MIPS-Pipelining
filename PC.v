@@ -1,16 +1,23 @@
 module pc_register(i,o,hold,clk);//i is the input,o is the output
 input [31:0] i;input hold,clk;//hold is the output of hazard control unit
 output reg[31:0] o;
+
 initial
 begin
 o=0;
 end
+
 always@(posedge clk)
 begin
 if(!hold)
 begin
 o<=i;
 end
+else
+begin
+o<=o;
+end
+
 end
 endmodule
 

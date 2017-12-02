@@ -15,16 +15,16 @@ begin
 		||      /* if rt of lw in IDIE is equal to rt of Beq in IFID */ (IDIE_MemRead && IFID_branch && (IDIE_rt == IFID_rt))
 		   )		
 		begin 
-			IFIDWrite<=1; //hold of IFID pipeline register
-			PCWrite<=1; //hold of PC	
-			StallOrControl<=1; // Put Zeroes on Control Signals
+			IFIDWrite=1; //hold of IFID pipeline register
+			PCWrite=1; //hold of PC	
+			StallOrControl=1; // Put Zeroes on Control Signals
 		end
 		
 		else
 		begin
-			IFIDWrite<=0;
-			PCWrite<=0;
-			StallOrControl<=0;
+			IFIDWrite=0;
+			PCWrite=0;
+			StallOrControl=0;
 		end
 end
 endmodule 
