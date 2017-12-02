@@ -155,10 +155,10 @@ module mips_pipeline_integration;
 		clk=0;
 	end
 	always begin
-	#1 clk=~clk;
+	#5 clk<=~clk;
 	end
 	initial begin
-		$monitor($time ,,, "ALU Result:%d,EXMEM_ALUResult:%d,MEMWB_ALUResult:%d,,,  MEMWB_ReadData:%d,MEMWB_ALUResult:%d,MEMWB_MemtoReg:%d,write_data:%d",ALUResult,EXMEM_ALUResult,MEMWB_ALUResult,MEMWB_ReadData,MEMWB_ALUResult,MEMWB_MemtoReg,write_data);
-	end
+	$monitor($time,,,"%h  %d  %d",out_im,ALUMux1Selector,ALUMux1Selector);
+		end
 
 endmodule

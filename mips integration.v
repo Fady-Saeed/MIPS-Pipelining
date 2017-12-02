@@ -1,5 +1,5 @@
 module mips_processor;
-reg clk;
+reg clk;reg hold;
 reg [31:0] pc;wire [31:0] out_instruction;
 wire [5:0] opcode,func;assign opcode=out_instruction[31:26];assign func=out_instruction[5:0];
 wire [4:0] rs,rt,rd;assign rs=out_instruction[25:21];assign rt=out_instruction[20:16];assign rd=out_instruction[15:11];
@@ -28,7 +28,7 @@ wire [31:0] new_pc;mux m4(temp1,temp2,output_and,new_pc);
 initial
 begin
 clk=0;
-pc=0;
+pc=0;hold =0;
 $monitor($time,,,"%d   %d",out_instruction,output_alu);
 end
 

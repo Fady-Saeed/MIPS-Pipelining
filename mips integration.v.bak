@@ -1,10 +1,4 @@
 module mips_processor;
-
-/*****
-******	IF STAGE
-*****/
-
-
 reg clk;
 reg [31:0] pc;wire [31:0] out_instruction;
 wire [5:0] opcode,func;assign opcode=out_instruction[31:26];assign func=out_instruction[5:0];
@@ -15,13 +9,6 @@ wire RegDst , Branch , MemRead , MemtoReg , MemWrite , AluSrc , RegWrite;
 wire [1:0] AluOp;
 
 instruction_memory IM(pc,out_instruction);
-IF_ID_register IFIDReg(pc_plus_four,out_instruction,
-_pc_plus_four,op_code,rr1,rr2,immediate_address,rs,rt,rt_extra,rd,
-clk);
-
-
-
-
 wire [4:0] write_register;M5 m1(rt,rd,RegDst,write_register);
 wire [31:0] out_RF1;wire [31:0] out_RF2,write_data;registerfile RF(rs,rt,write_register,write_data,RegWrite,out_RF1,out_RF2,clk);
 

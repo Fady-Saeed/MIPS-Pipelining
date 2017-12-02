@@ -61,7 +61,7 @@ module mips_pipeline_integration;
 	// Hazard Detection Control Unit
 	wire[1:0] IDIE_M_control;
 	wire[4:0] IDIE_rt;
-	HazardDetectionUnit HDU(IDIE_M_control[1],IDIE_rt,rs,rt,IFID_hold,hazard_pc_hold,StallOrControl,MemWrite,MemRead ,RegWrite);
+	HazardDetectionUnit HDU(IDIE_M_control[1],IDIE_rt,rs,rt,IFID_hold,hazard_pc_hold,StallOrControl,MemWrite,MemRead,RegWrite,branch_control);
 	
 	wire[8:0] control_signals,control_signals_;
 	assign control_signals = {RegWrite,MemtoReg,MemRead,MemWrite,AluSrc,AluOp,RegDst,branch_control};
@@ -155,10 +155,10 @@ module mips_pipeline_integration;
 		clk=0;
 	end
 	always begin
-	#1 clk=~clk;
+	#5 clk<=~clk;
 	end
 	initial begin
-		$monitor($time ,,, "ALU Result:%d,EXMEM_ALUResult:%d,MEMWB_ALUResult:%d,,,  MEMWB_ReadData:%d,MEMWB_ALUResult:%d,MEMWB_MemtoReg:%d,write_data:%d",ALUResult,EXMEM_ALUResult,MEMWB_ALUResult,MEMWB_ReadData,MEMWB_ALUResult,MEMWB_MemtoReg,write_data);
-	end
+	$monitor($time,,,"%d  %h",out_im,ALUMux1Selector,ALUMux1Selector);
+		end
 
 endmodule

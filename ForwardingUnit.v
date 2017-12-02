@@ -18,28 +18,28 @@ if(reg_write_exe)
 begin
 	if((rs==rd3) &&(rd3!=0))
 	begin
-		control_mux1 = 2'b10 ;
+		control_mux1 <= 2'b10 ;
 	end
-	else if((rt==rd3) &&(rd3!=0))
+	if((rt==rd3) &&(rd3!=0))
 	begin
-		control_mux2 = 2'b10;
+		control_mux2 <= 2'b10;
 	end
 end
 if(reg_write_mem)
 begin
 	if((rs==rd4) &&(rd4!=0))
 	begin
-		control_mux1 = 2'b01 ;
+		control_mux1 <= 2'b01 ;
 	end
-	else if((rt==rd4) &&(rd4!=0))
+	if((rt==rd4) &&(rd4!=0))
 	begin
-		control_mux2 = 2'b01;
+		control_mux2 <= 2'b01;
 	end
 end
 else
 	begin
-		control_mux1 = 2'b00 ;
-		control_mux2 = 2'b00 ;
+		control_mux1 <= 2'b00 ;
+		control_mux2 <= 2'b00 ;
 	end
 
 end
