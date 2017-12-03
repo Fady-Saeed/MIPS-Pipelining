@@ -7,7 +7,7 @@ always@(IFID_rs or IFID_rt or IDIE_rt or IDIE_MemRead or IFID_MemWrite or IFID_M
 begin
 
 		if( 
-			/* if rt of lw in IDIE is equal to rs of sw in IFID */ (IDIE_MemRead && IFID_MemWrite && (IDIE_rt == IFID_rs))
+			/* if rt of lw in IDIE is equal to rs of sw in IFID */ (IDIE_MemRead && IFID_MemWrite && (IDIE_rt == IFID_rt))
 		||      /* if rt of lw in IDIE is equal to rs of lw in IFID */ (IDIE_MemRead && IFID_MemRead && (IDIE_rt == IFID_rs))
 		||      /* if rt of lw in IDIE is equal to rt of R-format in IFID */ (IDIE_MemRead && IFID_RegWrite && (IDIE_rt == IFID_rt))
 		||	/* if rt of lw in IDIE is equal to rs of R-format in IFID */ (IDIE_MemRead && IFID_RegWrite && (IDIE_rt == IFID_rs))

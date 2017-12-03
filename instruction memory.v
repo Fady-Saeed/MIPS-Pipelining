@@ -4,11 +4,11 @@ output wire [31:0] out;
 reg [31:0] IM [0:1023];//instruction memory is 4KB,address is 32 bit
 initial
 begin
-IM[0]=32'h 02128020;
+/*IM[0]=32'h 02128020;
 IM[1]=32'h 02129022;
 IM[2]=32'h 02729820;
 IM[3]=32'h 0272a022;
-IM[4]=32'h 0292a020;
+IM[4]=32'h 0292a020;*/
 /*
 add $s0,$s0,$s2 s0=34
 sub $s2,$s0,$s2 s2=16 
@@ -70,6 +70,8 @@ add $s6,$s6,$s6
 add $s7,$s7,$s7
 */
 
+
+	$readmemh("Instructions.hex",IM);
 end
 assign out=IM[read_address>>2];
 

@@ -10,7 +10,7 @@ module mips_pipeline_integration;
 	assign pc_plus_four = read_address_im+4;
 
 	//PC MUX Control Using AND
-	and A1(pc_mux_control,branch_control,equal_flag); // Branch Control from Control Unit ,, Equal Flag from Comparator or ALU
+	and A1(pc_mux_control,IDIE_branch,equal_flag); // Branch Control from Control Unit ,, Equal Flag from Comparator or ALU
 	/* Branch Control May Change */
 
 	// PC MUX Module
@@ -109,7 +109,8 @@ module mips_pipeline_integration;
 	ALU ALUUnit(ALUIn1,ALUIn2,op,IDIE_immediate_extended[10:6],ALUResult,equal_flag);
 	
 	// Branch Case Adder
-	assign pc_branch = IDIE_immediate_extended<<2 + IDIE_pc_plus_four;
+	wire[31:0] IDIE_immediate_extended_shifted_by_two = IDIE_immediate_extended<<2;
+	assign pc_branch = IDIE_immediate_extended_shifted_by_two + IDIE_pc_plus_four;
 
 	// Forwarding Unit
 	wire[4:0] EXMEM_DestinationReg;
@@ -159,7 +160,7 @@ module mips_pipeline_integration;
 	#5 clk<=~clk;
 	end
 	initial begin
-	$monitor($time,,,"%d  %d   %d",out_im,ALUMux1Selector,ALUMux2Selector);
+	$monitor($time,,,"ALUResult:%d,op:%b",ALUResult,op);
 		end
 
 endmodule

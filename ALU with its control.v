@@ -23,6 +23,7 @@ begin
 		        34 : begin  op<=4'b0110; end //sub
 		        0  : begin  op<=4'b0100; end //sll
 		        2  : begin  op<=4'b0101; end //srl
+		        37  : begin  op<=4'b0001; end //or
 			default : begin op=4'bxxxx; end
 		        endcase
 			end	
@@ -97,11 +98,11 @@ always @(A or B or op or shift_amt) begin
 				//overflow <= 0;
 			end
 			4'b0100: begin
-				result <= A << shift_amt;
+				result <= B << shift_amt;
 				//overflow <= 0;
 			end
 			4'b0101: begin
-				result <= A >> shift_amt;
+				result <= B >> shift_amt;
 				//overflow <= 0;
 			end
 			/*6: begin
