@@ -48,8 +48,8 @@ end
 
 else
 	begin
-		control_mux1 = 2'b00 ;
-		control_mux2 = 2'b00 ;
+		control_mux1 <= 2'b00 ;
+		control_mux2 <= 2'b00 ;
 	end
 
 end

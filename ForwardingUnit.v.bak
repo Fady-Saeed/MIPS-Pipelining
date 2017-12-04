@@ -42,7 +42,7 @@ begin
 	begin
 		control_mux2 <= 2'b10;
 	end
-	else if(!(st==rd4))
+	else if(!(rt==rd4))
 	begin control_mux2 <= 2'b00 ; end 
 end
 

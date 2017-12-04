@@ -76,7 +76,7 @@ input wire[31:0] B;
 input wire[3:0] op;
 input wire[4:0] shift_amt;
 output integer result;
-output reg zeroflag;
+output wire zeroflag;
 always @(A or B or op or shift_amt) begin
 		case(op)
 			4'b0010: begin
@@ -122,8 +122,8 @@ always @(A or B or op or shift_amt) begin
 				//overflow <= 1'bx;
 			end
 		endcase
-assign zeroflag = (result==0)?1:0;
 	end
+assign zeroflag = (result==0)?1'b 1:1'b 0;
 endmodule
 
 /*********ALU ONLY TESTBENCH**********/
@@ -135,7 +135,7 @@ module test_ALU;
 	reg [4:0] shift_amt;
 	wire zeroflag;
 	wire[31:0] result;
-	ALU new(A,B,op,shift_amt,result,zeroflag);
+	ALU A1(A,B,op,shift_amt,result,zeroflag);
 
 	initial begin
 		A = 198456911;

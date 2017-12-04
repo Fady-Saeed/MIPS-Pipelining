@@ -1,5 +1,6 @@
-module mips_pipeline_integration;
-	reg clk; // Will be input wire clk
+module mips_pipeline_integration(clk,x);
+	output x;
+	input wire clk; // Will be input wire clk
 
 	/************************************************************
 				 IF STAGE
@@ -10,6 +11,9 @@ module mips_pipeline_integration;
 	assign pc_plus_four = read_address_im+4;
 
 	//PC MUX Control Using AND
+	wire pc_mux_control;
+	wire IDIE_branch,equal_flag;
+	assign x=equal_flag;
 	and A1(pc_mux_control,IDIE_branch,equal_flag); // Branch Control from Control Unit ,, Equal Flag from Comparator or ALU
 	/* Branch Control May Change */
 
@@ -31,6 +35,7 @@ module mips_pipeline_integration;
 	wire [4:0] rr1,rr2;
 	wire [15:0] immediate_address;
 	wire [4:0] rs,rt,rt_extra,rd;
+	wire IFID_hold;
 	IF_ID_register IFIDReg(pc_plus_four,out_im,IFID_pc_plus_four,op_code,rr1,rr2,immediate_address,rs,rt,rt_extra,rd,IFID_hold,clk);//na2es input bta3 control hazard	
 
 	/************************************************************
@@ -40,7 +45,7 @@ module mips_pipeline_integration;
 	// Register File
 	wire[4:0] write_register;
 	wire[31:0] write_data,read_data1,read_data2;
-	wire[4:0] MEMWB_DestinationReg;
+	wire[4:0] MEMWB_DestinationReg;wire MEMWB_RegWrite;
 	registerfile RF(rr1,rr2,MEMWB_DestinationReg,write_data,MEMWB_RegWrite,read_data1,read_data2,clk); 
 	// write_register,write_data,RegWrite from WB Stage
 
@@ -49,7 +54,7 @@ module mips_pipeline_integration;
 	sign_extend SE(immediate_address,immediate_extended);
 
 	// Control Unit
-	wire[1:0] AluOp;
+	wire[1:0] AluOp;wire RegDst, branch_control , MemRead , MemtoReg , MemWrite , AluSrc , RegWrite ;
 	ControlUnit CU(RegDst , branch_control , MemRead , MemtoReg , AluOp , MemWrite , AluSrc , RegWrite ,op_code );
 
 
@@ -60,7 +65,7 @@ module mips_pipeline_integration;
 	/****** 	     Hazard Detection Unit Part			*****/
 	// Hazard Detection Control Unit
 	wire[1:0] IDIE_M_control;
-	wire[4:0] IDIE_rt;
+	wire[4:0] IDIE_rt;wire StallOrControl;
 	HazardDetectionUnit HDU(IDIE_M_control[1],IDIE_rt,rs,rt,IFID_hold,hazard_pc_hold,StallOrControl,MemWrite,MemRead,RegWrite,branch_control);
 	
 	wire[8:0] control_signals,control_signals_;
@@ -74,7 +79,7 @@ module mips_pipeline_integration;
 	wire[31:0] IDIE_pc_plus_four;
 	wire[31:0] IDIE_read_data1,IDIE_read_data2;
 	wire[4:0] IDIE_rs,IDIE_rt_extra,IDIE_rd;
-	wire[5:0] alu_control_input;
+	wire[5:0] alu_control_input;wire IDIE_RegDst,IDIE_AluSrc;
 
 	ID_IE_register IDIEReg(control_signals_[8:7],control_signals_[6:5],control_signals_[4:1],control_signals_[0],
 	IDIE_WB_control,IDIE_M_control,IDIE_RegDst,IDIE_AluOp,IDIE_AluSrc,IDIE_branch,
@@ -113,13 +118,13 @@ module mips_pipeline_integration;
 	assign pc_branch = IDIE_immediate_extended_shifted_by_two + IDIE_pc_plus_four;
 
 	// Forwarding Unit
-	wire[4:0] EXMEM_DestinationReg;
+	wire[4:0] EXMEM_DestinationReg;wire  EXMEM_RegWrite;
 	Forwarding_Unit FWUnit( ALUMux1Selector , ALUMux2Selector ,  IDIE_rs , IDIE_rt , EXMEM_DestinationReg , MEMWB_DestinationReg , EXMEM_RegWrite, MEMWB_RegWrite );
 	
 	// EXMEM Register
 	wire[31:0] EXMEM_immediate_extended;
 	wire[1:0] EXMEM_WB_control;
-	wire[31:0] EXMEM_ALUIn2_ALUSrcIn;
+	wire[31:0] EXMEM_ALUIn2_ALUSrcIn;wire EXMEM_MemRead,EXMEM_MemWrite;
 	IE_MEM_register IEMEMReg(IDIE_WB_control,IDIE_M_control,
 	EXMEM_WB_control,EXMEM_MemRead,EXMEM_MemWrite,
 	ALUResult,EXMEM_ALUResult,
@@ -135,7 +140,7 @@ module mips_pipeline_integration;
 
 	// Data Memory
 	wire[31:0] ReadData,MEMWB_ReadData;
-	assign EXMEM_RegWrite = EXMEM_WB_control[1];
+	assign EXMEM_RegWrite = EXMEM_WB_control[1];wire MEMWB_MemtoReg;
 
 	DataMemory DM(ReadData,EXMEM_ALUResult,EXMEM_ALUIn2_ALUSrcIn,EXMEM_MemWrite,EXMEM_MemRead,clk);
 	
@@ -153,14 +158,20 @@ module mips_pipeline_integration;
 	mux2 MemToRegMux(MEMWB_ALUResult,MEMWB_ReadData,MEMWB_MemtoReg,write_data);
 
 	
-	initial begin
-		clk=0;
-	end
-	always begin
-	#5 clk<=~clk;
-	end
-	initial begin
-	$monitor($time,,,"ALUResult:%d,op:%b",ALUResult,op);
-		end
+
+endmodule
+
+
+module testPL;
+reg clk;
+initial 
+begin
+clk=0;
+end
+always
+begin
+#5 clk=!clk;
+end
+mips_pipeline_integration MP(clk);
 
 endmodule

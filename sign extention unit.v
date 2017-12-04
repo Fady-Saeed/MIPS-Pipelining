@@ -5,11 +5,11 @@ assign out [15:0]=in;
 wire A;
 assign A=in[15];
 reg [15:0] temp;
-always@(in)
+always@(in,A)
 begin
 	if(A==0)
 		temp<=16'b 0000_0000_0000_0000;
-	else if(A==1)
+	else
 		temp<=16'b 1111_1111_1111_1111;
 end
 assign out[31:16]=temp;
